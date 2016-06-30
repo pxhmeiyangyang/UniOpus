@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FD49214C758845ABA45EFE89B49325D5722AE52A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FD49214C758845ABA45EFE89B49325D5722AE52A" : 0,
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "3CADF9FC-99F8-4116-A9F0-4243FDD1E5C1",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FD49214C758845ABA45EFE89B49325D5722AE52A" : "unisoundSDK\/",
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AsrOralDemo",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios-sdk\/src\/iOS\/pro\/Demo\/AsrOralDemo.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.5.70:UStudy-iOS-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A8CDBA9513AA51CB342C8701BA42DD70C341880B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.5.80:oraleval-sdk-manager.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD49214C758845ABA45EFE89B49325D5722AE52A"
+    }
+  ]
+}

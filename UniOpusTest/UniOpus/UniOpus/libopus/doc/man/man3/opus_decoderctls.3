@@ -1,0 +1,55 @@
+.TH "Decoder related CTLs" 3 "25 Jun 2013" "Version 1.0.2" "Opus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Decoder related CTLs \- 
+.SS "Defines"
+
+.in +1c
+.ti -1c
+.RI "#define \fBOPUS_SET_GAIN\fP(x)"
+.br
+.RI "\fIConfigures decoder gain adjustment. \fP"
+.ti -1c
+.RI "#define \fBOPUS_GET_GAIN\fP(x)"
+.br
+.RI "\fIGets the decoder's configured gain adjustment. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+\fBSee also:\fP
+.RS 4
+\fBGeneric CTLs\fP, \fBEncoder related CTLs\fP, \fBOpus Decoder\fP 
+.RE
+.PP
+
+.SH "Define Documentation"
+.PP 
+.SS "#define OPUS_GET_GAIN(x)"
+.PP
+Gets the decoder's configured gain adjustment. \fBSee also:\fP
+.RS 4
+\fBOPUS_SET_GAIN\fP
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP \fCopus_int32 *\fP: Amount to scale PCM signal by in Q8 dB units. 
+.RE
+.PP
+
+.SS "#define OPUS_SET_GAIN(x)"
+.PP
+Configures decoder gain adjustment. Scales the decoded output by a factor specified in Q8 dB units. This has a maximum range of -32768 to 32767 inclusive, and returns OPUS_BAD_ARG otherwise. The default is zero indicating no adjustment. This setting survives decoder reset.
+.PP
+gain = pow(10, x/(20.0*256))
+.PP
+\fBParameters:\fP
+.RS 4
+\fIx\fP \fCopus_int32\fP: Amount to scale PCM signal by in Q8 dB units. 
+.RE
+.PP
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Opus from the source code.

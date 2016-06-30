@@ -1,0 +1,288 @@
+\hypertarget{group__opus__decoder}{
+\section{Opus Decoder}
+\label{group__opus__decoder}\index{Opus Decoder@{Opus Decoder}}
+}
+
+
+This page describes the process and functions used to decode Opus.  
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} \hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder}
+\begin{DoxyCompactList}\small\item\em Opus decoder state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}{opus\_\-decoder\_\-get\_\-size} (int channels)
+\begin{DoxyCompactList}\small\item\em Gets the size of an {\ttfamily OpusDecoder} structure. \item\end{DoxyCompactList}\item 
+\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$ \hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create} (\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a decoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga939156d1f561c4273d5c62fa9c235a01}{opus\_\-decoder\_\-init} (\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$st, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels)
+\begin{DoxyCompactList}\small\item\em Initializes a previously allocated decoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga7d1111f64c36027ddcb81799df9b3fc9}{opus\_\-decode} (\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\_\-int16} $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}{opus\_\-decode\_\-float} (\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, float $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode an Opus packet with floating point output. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga2d492844b4f66e7f34d85870f13d4846}{opus\_\-decoder\_\-ctl} (\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$st, int request,...)
+\begin{DoxyCompactList}\small\item\em Perform a CTL function on an Opus decoder. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__opus__decoder_gafebf4cb3c29c9317cac385446a76e36e}{opus\_\-decoder\_\-destroy} (\hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$st)
+\begin{DoxyCompactList}\small\item\em Frees an {\ttfamily OpusDecoder} allocated by \hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create()}. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga3426076e549ac8d02e9a4d0e681d498e}{opus\_\-packet\_\-parse} (const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, unsigned char $\ast$out\_\-toc, const unsigned char $\ast$frames\mbox{[}48\mbox{]}, short size\mbox{[}48\mbox{]}, int $\ast$payload\_\-offset)
+\begin{DoxyCompactList}\small\item\em Parse an opus packet into one or more frames. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga89b9375b6ff5e15f07fdc5d0cf4f0053}{opus\_\-packet\_\-get\_\-bandwidth} (const unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Gets the bandwidth of an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_gab2a955acced631c6cb7876bbdc7953d4}{opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame} (const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs)
+\begin{DoxyCompactList}\small\item\em Gets the number of samples per frame from an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga4209376ddf8cc3379767e1749e1ef26d}{opus\_\-packet\_\-get\_\-nb\_\-channels} (const unsigned char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Gets the number of channels from an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga064cb2ed9e77a934cd7db6c13b02c584}{opus\_\-packet\_\-get\_\-nb\_\-frames} (const unsigned char packet\mbox{[}$\,$\mbox{]}, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len)
+\begin{DoxyCompactList}\small\item\em Gets the number of frames in an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga3cfec8b0bed7789ebd88c3b3370d337b}{opus\_\-packet\_\-get\_\-nb\_\-samples} (const unsigned char packet\mbox{[}$\,$\mbox{]}, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs)
+\begin{DoxyCompactList}\small\item\em Gets the number of samples of an Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__decoder_ga659135a16060f85908f63443a2325118}{opus\_\-decoder\_\-get\_\-nb\_\-samples} (const \hyperlink{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{OpusDecoder} $\ast$dec, const unsigned char packet\mbox{[}$\,$\mbox{]}, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len)
+\begin{DoxyCompactList}\small\item\em Gets the number of samples of an Opus packet. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This page describes the process and functions used to decode Opus. The decoding process also starts with creating a decoder state. This can be done with: 
+\begin{DoxyCode}
+ int          error;
+ OpusDecoder *dec;
+ dec = opus_decoder_create(Fs, channels, &error);
+\end{DoxyCode}
+ where \begin{DoxyItemize}
+\item Fs is the sampling rate and must be 8000, 12000, 16000, 24000, or 48000 \item channels is the number of channels (1 or 2) \item error will hold the error code in case of failure (or \hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} on success) \item the return value is a newly created decoder state to be used for decoding\end{DoxyItemize}
+While \hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create()} allocates memory for the state, it's also possible to initialize pre-\/allocated memory: 
+\begin{DoxyCode}
+ int          size;
+ int          error;
+ OpusDecoder *dec;
+ size = opus_decoder_get_size(channels);
+ dec = malloc(size);
+ error = opus_decoder_init(dec, Fs, channels);
+\end{DoxyCode}
+ where \hyperlink{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}{opus\_\-decoder\_\-get\_\-size()} returns the required size for the decoder state. Note that future versions of this code may change the size, so no assuptions should be made about it.
+
+The decoder state is always continuous in memory and only a shallow copy is sufficient to copy it (e.g. memcpy())
+
+To decode a frame, \hyperlink{group__opus__decoder_ga7d1111f64c36027ddcb81799df9b3fc9}{opus\_\-decode()} or \hyperlink{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}{opus\_\-decode\_\-float()} must be called with a packet of compressed audio data: 
+\begin{DoxyCode}
+ frame_size = opus_decode(dec, packet, len, decoded, max_size, 0);
+\end{DoxyCode}
+ where
+
+\begin{DoxyItemize}
+\item packet is the byte array containing the compressed data \item len is the exact number of bytes contained in the packet \item decoded is the decoded audio data in opus\_\-int16 (or float for \hyperlink{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}{opus\_\-decode\_\-float()}) \item max\_\-size is the max duration of the frame in samples (per channel) that can fit into the decoded\_\-frame array\end{DoxyItemize}
+\hyperlink{group__opus__decoder_ga7d1111f64c36027ddcb81799df9b3fc9}{opus\_\-decode()} and \hyperlink{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}{opus\_\-decode\_\-float()} return the number of samples (per channel) decoded from the packet. If that value is negative, then an error has occurred. This can occur if the packet is corrupted or if the audio buffer is too small to hold the decoded audio.
+
+Opus is a stateful codec with overlapping blocks and as a result Opus packets are not coded independently of each other. Packets must be passed into the decoder serially and in the correct order for a correct decode. Lost packets can be replaced with loss concealment by calling the decoder with a null pointer and zero length for the missing packet.
+
+A single codec state may only be accessed from a single thread at a time and any required locking must be performed by the caller. Separate streams must be decoded with separate decoder states and can be decoded in parallel unless the library was compiled with NONTHREADSAFE\_\-PSEUDOSTACK defined. 
+
+\subsection{Typedef Documentation}
+\hypertarget{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}{
+\index{opus\_\-decoder@{opus\_\-decoder}!OpusDecoder@{OpusDecoder}}
+\index{OpusDecoder@{OpusDecoder}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{OpusDecoder}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf OpusDecoder} {\bf OpusDecoder}}}
+\label{group__opus__decoder_ga401d8579958d36094715a6b90cd159a6}
+
+
+Opus decoder state. This contains the complete state of an Opus decoder. It is position independent and can be freely copied. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create},\hyperlink{group__opus__decoder_ga939156d1f561c4273d5c62fa9c235a01}{opus\_\-decoder\_\-init} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__opus__decoder_ga7d1111f64c36027ddcb81799df9b3fc9}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decode@{opus\_\-decode}}
+\index{opus\_\-decode@{opus\_\-decode}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decode}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decode ({\bf OpusDecoder} $\ast$ {\em st}, \/  const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em len}, \/  {\bf opus\_\-int16} $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  int {\em decode\_\-fec})}}
+\label{group__opus__decoder_ga7d1111f64c36027ddcb81799df9b3fc9}
+
+
+Decode an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em st}]{\ttfamily OpusDecoder$\ast$}: Decoder state \item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Input payload. Use a NULL pointer to indicate packet loss \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: Number of bytes in payload$\ast$ \item[\mbox{$\rightarrow$} {\em pcm}]{\ttfamily opus\_\-int16$\ast$}: Output signal (interleaved if 2 channels). length is frame\_\-size$\ast$channels$\ast$sizeof(opus\_\-int16) \item[\mbox{$\leftarrow$} {\em frame\_\-size}]Number of samples per channel of available space in {\itshape pcm\/}. If this is less than the maximum packet duration (120ms; 5760 for 48kHz), this function will not be capable of decoding some packets. In the case of PLC (data==NULL) or FEC (decode\_\-fec=1), then frame\_\-size needs to be exactly the duration of audio that is missing, otherwise the decoder will not be in the optimal state to decode the next incoming packet. For the PLC and FEC cases, frame\_\-size {\bfseries must} be a multiple of 2.5 ms. \item[\mbox{$\leftarrow$} {\em decode\_\-fec}]{\ttfamily int}: Flag (0 or 1) to request that any in-\/band forward error correction data be decoded. If no such data is available, the frame is decoded as if it were lost. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of decoded samples or \hyperlink{group__opus__errorcodes}{Error codes} 
+\end{DoxyReturn}
+\hypertarget{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decode\_\-float@{opus\_\-decode\_\-float}}
+\index{opus\_\-decode\_\-float@{opus\_\-decode\_\-float}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decode\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decode\_\-float ({\bf OpusDecoder} $\ast$ {\em st}, \/  const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em len}, \/  float $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  int {\em decode\_\-fec})}}
+\label{group__opus__decoder_ga9c554b8c0214e24733a299fe53bb3bd2}
+
+
+Decode an Opus packet with floating point output. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em st}]{\ttfamily OpusDecoder$\ast$}: Decoder state \item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Input payload. Use a NULL pointer to indicate packet loss \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: Number of bytes in payload \item[\mbox{$\rightarrow$} {\em pcm}]{\ttfamily float$\ast$}: Output signal (interleaved if 2 channels). length is frame\_\-size$\ast$channels$\ast$sizeof(float) \item[\mbox{$\leftarrow$} {\em frame\_\-size}]Number of samples per channel of available space in {\itshape pcm\/}. If this is less than the maximum packet duration (120ms; 5760 for 48kHz), this function will not be capable of decoding some packets. In the case of PLC (data==NULL) or FEC (decode\_\-fec=1), then frame\_\-size needs to be exactly the duration of audio that is missing, otherwise the decoder will not be in the optimal state to decode the next incoming packet. For the PLC and FEC cases, frame\_\-size {\bfseries must} be a multiple of 2.5 ms. \item[\mbox{$\leftarrow$} {\em decode\_\-fec}]{\ttfamily int}: Flag (0 or 1) to request that any in-\/band forward error correction data be decoded. If no such data is available the frame is decoded as if it were lost. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of decoded samples or \hyperlink{group__opus__errorcodes}{Error codes} 
+\end{DoxyReturn}
+\hypertarget{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-create@{opus\_\-decoder\_\-create}}
+\index{opus\_\-decoder\_\-create@{opus\_\-decoder\_\-create}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OpusDecoder}$\ast$ opus\_\-decoder\_\-create ({\bf opus\_\-int32} {\em Fs}, \/  int {\em channels}, \/  int $\ast$ {\em error})}}
+\label{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}
+
+
+Allocates and initializes a decoder state. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em Fs}]{\ttfamily opus\_\-int32}: Sample rate to decode at (Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[\mbox{$\leftarrow$} {\em channels}]{\ttfamily int}: Number of channels (1 or 2) to decode \item[\mbox{$\rightarrow$} {\em error}]{\ttfamily int$\ast$}: \hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} Success or \hyperlink{group__opus__errorcodes}{Error codes}\end{DoxyParams}
+Internally Opus stores data at 48000 Hz, so that should be the default value for Fs. However, the decoder can efficiently decode to buffers at 8, 12, 16, and 24 kHz so if for some reason the caller cannot use data at the full sample rate, or knows the compressed data doesn't use the full frequency range, it can request decoding at a reduced rate. Likewise, the decoder is capable of filling in either mono or interleaved stereo pcm buffers, at the caller's request. \hypertarget{group__opus__decoder_ga2d492844b4f66e7f34d85870f13d4846}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-ctl@{opus\_\-decoder\_\-ctl}}
+\index{opus\_\-decoder\_\-ctl@{opus\_\-decoder\_\-ctl}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-ctl}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decoder\_\-ctl ({\bf OpusDecoder} $\ast$ {\em st}, \/  int {\em request}, \/   {\em ...})}}
+\label{group__opus__decoder_ga2d492844b4f66e7f34d85870f13d4846}
+
+
+Perform a CTL function on an Opus decoder. Generally the request and subsequent arguments are generated by a convenience macro. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusDecoder$\ast$}: Decoder state. \item[{\em request}]This and all remaining parameters should be replaced by one of the convenience macros in \hyperlink{group__opus__genericctls}{Generic CTLs} or \hyperlink{group__opus__decoderctls}{Decoder related CTLs}. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs} 
+
+\hyperlink{group__opus__decoderctls}{Decoder related CTLs} 
+\end{DoxySeeAlso}
+\hypertarget{group__opus__decoder_gafebf4cb3c29c9317cac385446a76e36e}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-destroy@{opus\_\-decoder\_\-destroy}}
+\index{opus\_\-decoder\_\-destroy@{opus\_\-decoder\_\-destroy}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void opus\_\-decoder\_\-destroy ({\bf OpusDecoder} $\ast$ {\em st})}}
+\label{group__opus__decoder_gafebf4cb3c29c9317cac385446a76e36e}
+
+
+Frees an {\ttfamily OpusDecoder} allocated by \hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create()}. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em st}]{\ttfamily OpusDecoder$\ast$}: State to be freed. \end{DoxyParams}
+\hypertarget{group__opus__decoder_ga659135a16060f85908f63443a2325118}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-get\_\-nb\_\-samples@{opus\_\-decoder\_\-get\_\-nb\_\-samples}}
+\index{opus\_\-decoder\_\-get\_\-nb\_\-samples@{opus\_\-decoder\_\-get\_\-nb\_\-samples}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-get\_\-nb\_\-samples}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decoder\_\-get\_\-nb\_\-samples (const {\bf OpusDecoder} $\ast$ {\em dec}, \/  const unsigned char {\em packet}\mbox{[}$\,$\mbox{]}, \/  {\bf opus\_\-int32} {\em len})}}
+\label{group__opus__decoder_ga659135a16060f85908f63443a2325118}
+
+
+Gets the number of samples of an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em dec}]{\ttfamily OpusDecoder$\ast$}: Decoder state \item[\mbox{$\leftarrow$} {\em packet}]{\ttfamily char$\ast$}: Opus packet \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: Length of packet \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em OPUS\_\-INVALID\_\-PACKET}]The compressed data passed is corrupted or of an unsupported type \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-get\_\-size@{opus\_\-decoder\_\-get\_\-size}}
+\index{opus\_\-decoder\_\-get\_\-size@{opus\_\-decoder\_\-get\_\-size}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-get\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decoder\_\-get\_\-size (int {\em channels})}}
+\label{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}
+
+
+Gets the size of an {\ttfamily OpusDecoder} structure. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em channels}]{\ttfamily int}: Number of channels. This must be 1 or 2. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size in bytes. 
+\end{DoxyReturn}
+\hypertarget{group__opus__decoder_ga939156d1f561c4273d5c62fa9c235a01}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-decoder\_\-init@{opus\_\-decoder\_\-init}}
+\index{opus\_\-decoder\_\-init@{opus\_\-decoder\_\-init}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-decoder\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-decoder\_\-init ({\bf OpusDecoder} $\ast$ {\em st}, \/  {\bf opus\_\-int32} {\em Fs}, \/  int {\em channels})}}
+\label{group__opus__decoder_ga939156d1f561c4273d5c62fa9c235a01}
+
+
+Initializes a previously allocated decoder state. The state must be at least the size returned by \hyperlink{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}{opus\_\-decoder\_\-get\_\-size()}. This is intended for applications which use their own allocator instead of malloc. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__decoder_ga753f6fe0b699c81cfd47d70c8e15a0bd}{opus\_\-decoder\_\-create},\hyperlink{group__opus__decoder_gac918415b2ee21add75b7f867ce235011}{opus\_\-decoder\_\-get\_\-size} To reset a previously initialized state, use the \hyperlink{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}{OPUS\_\-RESET\_\-STATE} CTL. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em st}]{\ttfamily OpusDecoder$\ast$}: Decoder state. \item[\mbox{$\leftarrow$} {\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate to decode to (Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[\mbox{$\leftarrow$} {\em channels}]{\ttfamily int}: Number of channels (1 or 2) to decode \end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em \hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK}}]Success or \hyperlink{group__opus__errorcodes}{Error codes} \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_ga89b9375b6ff5e15f07fdc5d0cf4f0053}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-get\_\-bandwidth@{opus\_\-packet\_\-get\_\-bandwidth}}
+\index{opus\_\-packet\_\-get\_\-bandwidth@{opus\_\-packet\_\-get\_\-bandwidth}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-get\_\-bandwidth}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-get\_\-bandwidth (const unsigned char $\ast$ {\em data})}}
+\label{group__opus__decoder_ga89b9375b6ff5e15f07fdc5d0cf4f0053}
+
+
+Gets the bandwidth of an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Opus packet \end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em OPUS\_\-BANDWIDTH\_\-NARROWBAND}]Narrowband (4kHz bandpass) \item[{\em OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}]Mediumband (6kHz bandpass) \item[{\em OPUS\_\-BANDWIDTH\_\-WIDEBAND}]Wideband (8kHz bandpass) \item[{\em OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}]Superwideband (12kHz bandpass) \item[{\em OPUS\_\-BANDWIDTH\_\-FULLBAND}]Fullband (20kHz bandpass) \item[{\em OPUS\_\-INVALID\_\-PACKET}]The compressed data passed is corrupted or of an unsupported type \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_ga4209376ddf8cc3379767e1749e1ef26d}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-get\_\-nb\_\-channels@{opus\_\-packet\_\-get\_\-nb\_\-channels}}
+\index{opus\_\-packet\_\-get\_\-nb\_\-channels@{opus\_\-packet\_\-get\_\-nb\_\-channels}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-get\_\-nb\_\-channels}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-get\_\-nb\_\-channels (const unsigned char $\ast$ {\em data})}}
+\label{group__opus__decoder_ga4209376ddf8cc3379767e1749e1ef26d}
+
+
+Gets the number of channels from an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Opus packet \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of channels 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em OPUS\_\-INVALID\_\-PACKET}]The compressed data passed is corrupted or of an unsupported type \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_ga064cb2ed9e77a934cd7db6c13b02c584}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-get\_\-nb\_\-frames@{opus\_\-packet\_\-get\_\-nb\_\-frames}}
+\index{opus\_\-packet\_\-get\_\-nb\_\-frames@{opus\_\-packet\_\-get\_\-nb\_\-frames}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-get\_\-nb\_\-frames}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-get\_\-nb\_\-frames (const unsigned char {\em packet}\mbox{[}$\,$\mbox{]}, \/  {\bf opus\_\-int32} {\em len})}}
+\label{group__opus__decoder_ga064cb2ed9e77a934cd7db6c13b02c584}
+
+
+Gets the number of frames in an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em packet}]{\ttfamily char$\ast$}: Opus packet \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: Length of packet \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of frames 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em OPUS\_\-INVALID\_\-PACKET}]The compressed data passed is corrupted or of an unsupported type \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_ga3cfec8b0bed7789ebd88c3b3370d337b}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-get\_\-nb\_\-samples@{opus\_\-packet\_\-get\_\-nb\_\-samples}}
+\index{opus\_\-packet\_\-get\_\-nb\_\-samples@{opus\_\-packet\_\-get\_\-nb\_\-samples}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-get\_\-nb\_\-samples}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-get\_\-nb\_\-samples (const unsigned char {\em packet}\mbox{[}$\,$\mbox{]}, \/  {\bf opus\_\-int32} {\em len}, \/  {\bf opus\_\-int32} {\em Fs})}}
+\label{group__opus__decoder_ga3cfec8b0bed7789ebd88c3b3370d337b}
+
+
+Gets the number of samples of an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em packet}]{\ttfamily char$\ast$}: Opus packet \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: Length of packet \item[\mbox{$\leftarrow$} {\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate in Hz. This must be a multiple of 400, or inaccurate results will be returned. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples 
+\end{DoxyReturn}
+
+\begin{DoxyRetVals}{Return values}
+\item[{\em OPUS\_\-INVALID\_\-PACKET}]The compressed data passed is corrupted or of an unsupported type \end{DoxyRetVals}
+\hypertarget{group__opus__decoder_gab2a955acced631c6cb7876bbdc7953d4}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame@{opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame}}
+\index{opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame@{opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-get\_\-samples\_\-per\_\-frame (const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em Fs})}}
+\label{group__opus__decoder_gab2a955acced631c6cb7876bbdc7953d4}
+
+
+Gets the number of samples per frame from an Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Opus packet. This must contain at least one byte of data. \item[\mbox{$\leftarrow$} {\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate in Hz. This must be a multiple of 400, or inaccurate results will be returned. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples per frame. 
+\end{DoxyReturn}
+\hypertarget{group__opus__decoder_ga3426076e549ac8d02e9a4d0e681d498e}{
+\index{opus\_\-decoder@{opus\_\-decoder}!opus\_\-packet\_\-parse@{opus\_\-packet\_\-parse}}
+\index{opus\_\-packet\_\-parse@{opus\_\-packet\_\-parse}!opus_decoder@{opus\_\-decoder}}
+\subsubsection[{opus\_\-packet\_\-parse}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-packet\_\-parse (const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em len}, \/  unsigned char $\ast$ {\em out\_\-toc}, \/  const unsigned char $\ast$ {\em frames}\mbox{[}48\mbox{]}, \/  short {\em size}\mbox{[}48\mbox{]}, \/  int $\ast$ {\em payload\_\-offset})}}
+\label{group__opus__decoder_ga3426076e549ac8d02e9a4d0e681d498e}
+
+
+Parse an opus packet into one or more frames. Opus\_\-decode will perform this operation internally so most applications do not need to use this function. This function does not copy the frames, the returned pointers are pointers into the input packet. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em data}]{\ttfamily char$\ast$}: Opus packet to be parsed \item[\mbox{$\leftarrow$} {\em len}]{\ttfamily opus\_\-int32}: size of data \item[\mbox{$\rightarrow$} {\em out\_\-toc}]{\ttfamily char$\ast$}: TOC pointer \item[\mbox{$\rightarrow$} {\em frames}]{\ttfamily char$\ast$\mbox{[}48\mbox{]}} encapsulated frames \item[\mbox{$\rightarrow$} {\em size}]{\ttfamily short\mbox{[}48\mbox{]}} sizes of the encapsulated frames \item[\mbox{$\rightarrow$} {\em payload\_\-offset}]{\ttfamily int$\ast$}: returns the position of the payload within the packet (in bytes) \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+number of frames 
+\end{DoxyReturn}

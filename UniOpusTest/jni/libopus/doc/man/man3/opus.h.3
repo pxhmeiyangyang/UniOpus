@@ -1,0 +1,159 @@
+.TH "opus.h" 3 "25 Jun 2013" "Version 1.0.2" "Opus" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+opus.h \- 
+.PP
+Opus reference implementation API.  
+
+.SH SYNOPSIS
+.br
+.PP
+\fC#include 'opus_types.h'\fP
+.br
+\fC#include 'opus_defines.h'\fP
+.br
+
+.SS "Typedefs"
+
+.in +1c
+.ti -1c
+.RI "typedef struct \fBOpusEncoder\fP \fBOpusEncoder\fP"
+.br
+.RI "\fIOpus encoder state. \fP"
+.ti -1c
+.RI "typedef struct \fBOpusDecoder\fP \fBOpusDecoder\fP"
+.br
+.RI "\fIOpus decoder state. \fP"
+.ti -1c
+.RI "typedef struct \fBOpusRepacketizer\fP \fBOpusRepacketizer\fP"
+.br
+.in -1c
+.SS "Functions"
+
+.in +1c
+.ti -1c
+.RI "int \fBopus_encoder_get_size\fP (int channels)"
+.br
+.RI "\fIGets the size of an \fCOpusEncoder\fP structure. \fP"
+.ti -1c
+.RI "\fBOpusEncoder\fP * \fBopus_encoder_create\fP (\fBopus_int32\fP Fs, int channels, int application, int *error)"
+.br
+.RI "\fIAllocates and initializes an encoder state. \fP"
+.ti -1c
+.RI "int \fBopus_encoder_init\fP (\fBOpusEncoder\fP *st, \fBopus_int32\fP Fs, int channels, int application)"
+.br
+.RI "\fIInitializes a previously allocated encoder state The memory pointed to by st must be at least the size returned by \fBopus_encoder_get_size()\fP. \fP"
+.ti -1c
+.RI "\fBopus_int32\fP \fBopus_encode\fP (\fBOpusEncoder\fP *st, const \fBopus_int16\fP *pcm, int frame_size, unsigned char *data, \fBopus_int32\fP max_data_bytes)"
+.br
+.RI "\fIEncodes an Opus frame. \fP"
+.ti -1c
+.RI "\fBopus_int32\fP \fBopus_encode_float\fP (\fBOpusEncoder\fP *st, const float *pcm, int frame_size, unsigned char *data, \fBopus_int32\fP max_data_bytes)"
+.br
+.RI "\fIEncodes an Opus frame from floating point input. \fP"
+.ti -1c
+.RI "void \fBopus_encoder_destroy\fP (\fBOpusEncoder\fP *st)"
+.br
+.RI "\fIFrees an \fCOpusEncoder\fP allocated by \fBopus_encoder_create()\fP. \fP"
+.ti -1c
+.RI "int \fBopus_encoder_ctl\fP (\fBOpusEncoder\fP *st, int request,...)"
+.br
+.RI "\fIPerform a CTL function on an Opus encoder. \fP"
+.ti -1c
+.RI "int \fBopus_decoder_get_size\fP (int channels)"
+.br
+.RI "\fIGets the size of an \fCOpusDecoder\fP structure. \fP"
+.ti -1c
+.RI "\fBOpusDecoder\fP * \fBopus_decoder_create\fP (\fBopus_int32\fP Fs, int channels, int *error)"
+.br
+.RI "\fIAllocates and initializes a decoder state. \fP"
+.ti -1c
+.RI "int \fBopus_decoder_init\fP (\fBOpusDecoder\fP *st, \fBopus_int32\fP Fs, int channels)"
+.br
+.RI "\fIInitializes a previously allocated decoder state. \fP"
+.ti -1c
+.RI "int \fBopus_decode\fP (\fBOpusDecoder\fP *st, const unsigned char *data, \fBopus_int32\fP len, \fBopus_int16\fP *pcm, int frame_size, int decode_fec)"
+.br
+.RI "\fIDecode an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_decode_float\fP (\fBOpusDecoder\fP *st, const unsigned char *data, \fBopus_int32\fP len, float *pcm, int frame_size, int decode_fec)"
+.br
+.RI "\fIDecode an Opus packet with floating point output. \fP"
+.ti -1c
+.RI "int \fBopus_decoder_ctl\fP (\fBOpusDecoder\fP *st, int request,...)"
+.br
+.RI "\fIPerform a CTL function on an Opus decoder. \fP"
+.ti -1c
+.RI "void \fBopus_decoder_destroy\fP (\fBOpusDecoder\fP *st)"
+.br
+.RI "\fIFrees an \fCOpusDecoder\fP allocated by \fBopus_decoder_create()\fP. \fP"
+.ti -1c
+.RI "int \fBopus_packet_parse\fP (const unsigned char *data, \fBopus_int32\fP len, unsigned char *out_toc, const unsigned char *frames[48], short size[48], int *payload_offset)"
+.br
+.RI "\fIParse an opus packet into one or more frames. \fP"
+.ti -1c
+.RI "int \fBopus_packet_get_bandwidth\fP (const unsigned char *data)"
+.br
+.RI "\fIGets the bandwidth of an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_packet_get_samples_per_frame\fP (const unsigned char *data, \fBopus_int32\fP Fs)"
+.br
+.RI "\fIGets the number of samples per frame from an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_packet_get_nb_channels\fP (const unsigned char *data)"
+.br
+.RI "\fIGets the number of channels from an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_packet_get_nb_frames\fP (const unsigned char packet[], \fBopus_int32\fP len)"
+.br
+.RI "\fIGets the number of frames in an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_packet_get_nb_samples\fP (const unsigned char packet[], \fBopus_int32\fP len, \fBopus_int32\fP Fs)"
+.br
+.RI "\fIGets the number of samples of an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_decoder_get_nb_samples\fP (const \fBOpusDecoder\fP *dec, const unsigned char packet[], \fBopus_int32\fP len)"
+.br
+.RI "\fIGets the number of samples of an Opus packet. \fP"
+.ti -1c
+.RI "int \fBopus_repacketizer_get_size\fP (void)"
+.br
+.RI "\fIGets the size of an \fCOpusRepacketizer\fP structure. \fP"
+.ti -1c
+.RI "\fBOpusRepacketizer\fP * \fBopus_repacketizer_init\fP (\fBOpusRepacketizer\fP *rp)"
+.br
+.RI "\fI(Re)initializes a previously allocated repacketizer state. \fP"
+.ti -1c
+.RI "\fBOpusRepacketizer\fP * \fBopus_repacketizer_create\fP (void)"
+.br
+.RI "\fIAllocates memory and initializes the new repacketizer with \fBopus_repacketizer_init()\fP. \fP"
+.ti -1c
+.RI "void \fBopus_repacketizer_destroy\fP (\fBOpusRepacketizer\fP *rp)"
+.br
+.RI "\fIFrees an \fCOpusRepacketizer\fP allocated by \fBopus_repacketizer_create()\fP. \fP"
+.ti -1c
+.RI "int \fBopus_repacketizer_cat\fP (\fBOpusRepacketizer\fP *rp, const unsigned char *data, \fBopus_int32\fP len)"
+.br
+.RI "\fIAdd a packet to the current repacketizer state. \fP"
+.ti -1c
+.RI "\fBopus_int32\fP \fBopus_repacketizer_out_range\fP (\fBOpusRepacketizer\fP *rp, int begin, int end, unsigned char *data, \fBopus_int32\fP maxlen)"
+.br
+.RI "\fIConstruct a new packet from data previously submitted to the repacketizer state via \fBopus_repacketizer_cat()\fP. \fP"
+.ti -1c
+.RI "int \fBopus_repacketizer_get_nb_frames\fP (\fBOpusRepacketizer\fP *rp)"
+.br
+.RI "\fIReturn the total number of frames contained in packet data submitted to the repacketizer state so far via \fBopus_repacketizer_cat()\fP since the last call to \fBopus_repacketizer_init()\fP or \fBopus_repacketizer_create()\fP. \fP"
+.ti -1c
+.RI "\fBopus_int32\fP \fBopus_repacketizer_out\fP (\fBOpusRepacketizer\fP *rp, unsigned char *data, \fBopus_int32\fP maxlen)"
+.br
+.RI "\fIConstruct a new packet from data previously submitted to the repacketizer state via \fBopus_repacketizer_cat()\fP. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Opus reference implementation API. 
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Opus from the source code.

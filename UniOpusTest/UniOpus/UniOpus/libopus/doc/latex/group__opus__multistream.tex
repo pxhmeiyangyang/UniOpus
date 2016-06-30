@@ -1,0 +1,304 @@
+\hypertarget{group__opus__multistream}{
+\section{Opus Multistream API}
+\label{group__opus__multistream}\index{Opus Multistream API@{Opus Multistream API}}
+}
+
+
+The multistream API allows individual Opus streams to be combined into a single packet, enabling support for up to 255 channels.  
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} \hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder}
+\begin{DoxyCompactList}\small\item\em Opus multistream encoder state. \item\end{DoxyCompactList}\item 
+typedef struct \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder}
+\begin{DoxyCompactList}\small\item\em Opus multistream decoder state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Multistream encoder functions}
+\label{_amgrp3d1c363464c5de793a99376ffb2fb267}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} \hyperlink{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{opus\_\-multistream\_\-encoder\_\-get\_\-size} (int streams, int coupled\_\-streams)
+\begin{DoxyCompactList}\small\item\em Gets the size of an OpusMSEncoder structure. \item\end{DoxyCompactList}\item 
+\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$ \hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create} (\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int application, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a multistream encoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gae7586aa54c322fd9599de24b5c8b8c01}{opus\_\-multistream\_\-encoder\_\-init} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int application)
+\begin{DoxyCompactList}\small\item\em Initialize a previously allocated multistream encoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga9e1000f220d9872e9f3b6e4f2417b445}{opus\_\-multistream\_\-encode} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, const \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\_\-int16} $\ast$pcm, int frame\_\-size, unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} max\_\-data\_\-bytes)
+\begin{DoxyCompactList}\small\item\em Encodes a multistream Opus frame. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gaff832211e572536941b9d6094f9f42ce}{opus\_\-multistream\_\-encode\_\-float} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, const float $\ast$pcm, int frame\_\-size, unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} max\_\-data\_\-bytes)
+\begin{DoxyCompactList}\small\item\em Encodes a multistream Opus frame from floating point input. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__opus__multistream_gaec819b8d4b38350aba6959cee7d33f94}{opus\_\-multistream\_\-encoder\_\-destroy} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st)
+\begin{DoxyCompactList}\small\item\em Frees an {\ttfamily OpusMSEncoder} allocated by \hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create()}. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gae14328330c548dede66c494f51e33707}{opus\_\-multistream\_\-encoder\_\-ctl} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, int request,...)
+\begin{DoxyCompactList}\small\item\em Perform a CTL function on a multistream Opus encoder. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Multistream decoder functions}
+\label{_amgrpcc7358059c41f41af9a3b9b2f9644064}
+ \begin{DoxyCompactItemize}
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} \hyperlink{group__opus__multistream_ga38d745963e7903890c80278bc2569c39}{opus\_\-multistream\_\-decoder\_\-get\_\-size} (int streams, int coupled\_\-streams)
+\begin{DoxyCompactList}\small\item\em Gets the size of an {\ttfamily OpusMSDecoder} structure. \item\end{DoxyCompactList}\item 
+\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$ \hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create} (\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a multistream decoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga09a4d14fc497d4f6fbe76bd1c5d45436}{opus\_\-multistream\_\-decoder\_\-init} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping)
+\begin{DoxyCompactList}\small\item\em Intialize a previously allocated decoder state object. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gaa4b89541efe01970cf52e4a336db3ad0}{opus\_\-multistream\_\-decode} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\_\-int16} $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode a multistream Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga620e67c67872f8ea0b67a200c729630a}{opus\_\-multistream\_\-decode\_\-float} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, float $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode a multistream Opus packet with floating point output. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga4b3dca8d46e5868cc133f3f6d2b57688}{opus\_\-multistream\_\-decoder\_\-ctl} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, int request,...)
+\begin{DoxyCompactList}\small\item\em Perform a CTL function on a multistream Opus decoder. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__opus__multistream_gaaec72b484eabc78d7869221c6d2ce080}{opus\_\-multistream\_\-decoder\_\-destroy} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st)
+\begin{DoxyCompactList}\small\item\em Frees an {\ttfamily OpusMSDecoder} allocated by \hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create()}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The multistream API allows individual Opus streams to be combined into a single packet, enabling support for up to 255 channels. Unlike an elementary Opus stream, the encoder and decoder must negotiate the channel configuration before the decoder can successfully interpret the data in the packets produced by the encoder. Some basic information, such as packet duration, can be computed without any special negotiation.
+
+The format for multistream Opus packets is defined in the \href{http://tools.ietf.org/html/draft-terriberry-oggopus}{\tt Ogg encapsulation specification} and is based on the self-\/delimited Opus framing described in Appendix B of \href{http://tools.ietf.org/html/rfc6716}{\tt RFC 6716}. Normal Opus packets are just a degenerate case of multistream Opus packets, and can be encoded or decoded with the multistream API by setting {\ttfamily streams} to {\ttfamily 1} when initializing the encoder or decoder.
+
+Multistream Opus streams can contain up to 255 elementary Opus streams. These may be either \char`\"{}uncoupled\char`\"{} or \char`\"{}coupled\char`\"{}, indicating that the decoder is configured to decode them to either 1 or 2 channels, respectively. The streams are ordered so that all coupled streams appear at the beginning.
+
+A {\ttfamily mapping} table defines which decoded channel {\ttfamily i} should be used for each input/output (I/O) channel {\ttfamily j}. This table is typically provided as an unsigned char array. Let {\ttfamily i = mapping\mbox{[}j\mbox{]}} be the index for I/O channel {\ttfamily j}. If {\ttfamily i $<$ 2$\ast$coupled\_\-streams}, then I/O channel {\ttfamily j} is encoded as the left channel of stream {\ttfamily (i/2)} if {\ttfamily i} is even, or as the right channel of stream {\ttfamily (i/2)} if {\ttfamily i} is odd. Otherwise, I/O channel {\ttfamily j} is encoded as mono in stream {\ttfamily (i -\/ coupled\_\-streams)}, unless it has the special value 255, in which case it is omitted from the encoding entirely (the decoder will reproduce it as silence). Each value {\ttfamily i} must either be the special value 255 or be less than {\ttfamily streams + coupled\_\-streams}.
+
+The output channels specified by the encoder should use the \href{http://www.xiph.org/vorbis/doc/Vorbis_I_spec.html#x1-800004.3.9}{\tt Vorbis channel ordering}. A decoder may wish to apply an additional permutation to the mapping the encoder used to achieve a different output channel order (e.g. for outputing in WAV order).
+
+Each multistream packet contains an Opus packet for each stream, and all of the Opus packets in a single multistream packet must have the same duration. Therefore the duration of a multistream packet can be extracted from the TOC sequence of the first stream, which is located at the beginning of the packet, just like an elementary Opus stream:
+
+
+\begin{DoxyCode}
+ int nb_samples;
+ int nb_frames;
+ nb_frames = opus_packet_get_nb_frames(data, len);
+ if (nb_frames < 1)
+   return nb_frames;
+ nb_samples = opus_packet_get_samples_per_frame(data, 48000) * nb_frames;
+\end{DoxyCode}
+
+
+The general encoding and decoding process proceeds exactly the same as in the normal \hyperlink{group__opus__encoder}{Opus Encoder} and \hyperlink{group__opus__decoder}{Opus Decoder} APIs. See their documentation for an overview of how to use the corresponding multistream functions. 
+
+\subsection{Typedef Documentation}
+\hypertarget{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{
+\index{opus\_\-multistream@{opus\_\-multistream}!OpusMSDecoder@{OpusMSDecoder}}
+\index{OpusMSDecoder@{OpusMSDecoder}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{OpusMSDecoder}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf OpusMSDecoder} {\bf OpusMSDecoder}}}
+\label{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}
+
+
+Opus multistream decoder state. This contains the complete state of a multistream Opus decoder. It is position independent and can be freely copied. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create} 
+
+\hyperlink{group__opus__multistream_ga09a4d14fc497d4f6fbe76bd1c5d45436}{opus\_\-multistream\_\-decoder\_\-init} 
+\end{DoxySeeAlso}
+\hypertarget{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{
+\index{opus\_\-multistream@{opus\_\-multistream}!OpusMSEncoder@{OpusMSEncoder}}
+\index{OpusMSEncoder@{OpusMSEncoder}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{OpusMSEncoder}]{\setlength{\rightskip}{0pt plus 5cm}typedef struct {\bf OpusMSEncoder} {\bf OpusMSEncoder}}}
+\label{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}
+
+
+Opus multistream encoder state. This contains the complete state of a multistream Opus encoder. It is position independent and can be freely copied. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create} 
+
+\hyperlink{group__opus__multistream_gae7586aa54c322fd9599de24b5c8b8c01}{opus\_\-multistream\_\-encoder\_\-init} 
+\end{DoxySeeAlso}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__opus__multistream_gaa4b89541efe01970cf52e4a336db3ad0}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decode@{opus\_\-multistream\_\-decode}}
+\index{opus\_\-multistream\_\-decode@{opus\_\-multistream\_\-decode}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decode}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-decode ({\bf OpusMSDecoder} $\ast$ {\em st}, \/  const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em len}, \/  {\bf opus\_\-int16} $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  int {\em decode\_\-fec})}}
+\label{group__opus__multistream_gaa4b89541efe01970cf52e4a336db3ad0}
+
+
+Decode a multistream Opus packet. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSDecoder$\ast$}: Multistream decoder state. \item[\mbox{$\leftarrow$} {\em data}]{\ttfamily const unsigned char$\ast$}: Input payload. Use a {\ttfamily NULL} pointer to indicate packet loss. \item[{\em len}]{\ttfamily opus\_\-int32}: Number of bytes in payload. \item[\mbox{$\rightarrow$} {\em pcm}]{\ttfamily opus\_\-int16$\ast$}: Output signal, with interleaved samples. This must contain room for {\ttfamily frame\_\-size$\ast$channels} samples. \item[{\em frame\_\-size}]{\ttfamily int}: The number of samples per channel of available space in {\itshape pcm\/}. If this is less than the maximum packet duration (120 ms; 5760 for 48kHz), this function will not be capable of decoding some packets. In the case of PLC (data==NULL) or FEC (decode\_\-fec=1), then frame\_\-size needs to be exactly the duration of audio that is missing, otherwise the decoder will not be in the optimal state to decode the next incoming packet. For the PLC and FEC cases, frame\_\-size {\bfseries must} be a multiple of 2.5 ms. \item[{\em decode\_\-fec}]{\ttfamily int}: Flag (0 or 1) to request that any in-\/band forward error correction data be decoded. If no such data is available, the frame is decoded as if it were lost. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples decoded on success or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_ga620e67c67872f8ea0b67a200c729630a}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decode\_\-float@{opus\_\-multistream\_\-decode\_\-float}}
+\index{opus\_\-multistream\_\-decode\_\-float@{opus\_\-multistream\_\-decode\_\-float}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decode\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-decode\_\-float ({\bf OpusMSDecoder} $\ast$ {\em st}, \/  const unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em len}, \/  float $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  int {\em decode\_\-fec})}}
+\label{group__opus__multistream_ga620e67c67872f8ea0b67a200c729630a}
+
+
+Decode a multistream Opus packet with floating point output. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSDecoder$\ast$}: Multistream decoder state. \item[\mbox{$\leftarrow$} {\em data}]{\ttfamily const unsigned char$\ast$}: Input payload. Use a {\ttfamily NULL} pointer to indicate packet loss. \item[{\em len}]{\ttfamily opus\_\-int32}: Number of bytes in payload. \item[\mbox{$\rightarrow$} {\em pcm}]{\ttfamily opus\_\-int16$\ast$}: Output signal, with interleaved samples. This must contain room for {\ttfamily frame\_\-size$\ast$channels} samples. \item[{\em frame\_\-size}]{\ttfamily int}: The number of samples per channel of available space in {\itshape pcm\/}. If this is less than the maximum packet duration (120 ms; 5760 for 48kHz), this function will not be capable of decoding some packets. In the case of PLC (data==NULL) or FEC (decode\_\-fec=1), then frame\_\-size needs to be exactly the duration of audio that is missing, otherwise the decoder will not be in the optimal state to decode the next incoming packet. For the PLC and FEC cases, frame\_\-size {\bfseries must} be a multiple of 2.5 ms. \item[{\em decode\_\-fec}]{\ttfamily int}: Flag (0 or 1) to request that any in-\/band forward error correction data be decoded. If no such data is available, the frame is decoded as if it were lost. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Number of samples decoded on success or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decoder\_\-create@{opus\_\-multistream\_\-decoder\_\-create}}
+\index{opus\_\-multistream\_\-decoder\_\-create@{opus\_\-multistream\_\-decoder\_\-create}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decoder\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OpusMSDecoder}$\ast$ opus\_\-multistream\_\-decoder\_\-create ({\bf opus\_\-int32} {\em Fs}, \/  int {\em channels}, \/  int {\em streams}, \/  int {\em coupled\_\-streams}, \/  const unsigned char $\ast$ {\em mapping}, \/  int $\ast$ {\em error})}}
+\label{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}
+
+
+Allocates and initializes a multistream decoder state. Call \hyperlink{group__opus__multistream_gaaec72b484eabc78d7869221c6d2ce080}{opus\_\-multistream\_\-decoder\_\-destroy()} to release this object when finished. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate to decode at (in Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[{\em channels}]{\ttfamily int}: Number of channels to output. This must be at most 255. It may be different from the number of coded channels ({\ttfamily streams + coupled\_\-streams}). \item[{\em streams}]{\ttfamily int}: The total number of streams coded in the input. This must be no more than 255. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number of streams to decode as coupled (2 channel) streams. This must be no larger than the total number of streams. Additionally, The total number of coded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than 255. \item[\mbox{$\leftarrow$} {\em mapping}]{\ttfamily const unsigned char\mbox{[}channels\mbox{]}}: Mapping from coded channels to output channels, as described in \hyperlink{group__opus__multistream}{Opus Multistream API}. \item[\mbox{$\rightarrow$} {\em error}]{\ttfamily int $\ast$}: Returns \hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} on success, or an error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. \end{DoxyParams}
+\hypertarget{group__opus__multistream_ga4b3dca8d46e5868cc133f3f6d2b57688}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decoder\_\-ctl@{opus\_\-multistream\_\-decoder\_\-ctl}}
+\index{opus\_\-multistream\_\-decoder\_\-ctl@{opus\_\-multistream\_\-decoder\_\-ctl}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decoder\_\-ctl}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-decoder\_\-ctl ({\bf OpusMSDecoder} $\ast$ {\em st}, \/  int {\em request}, \/   {\em ...})}}
+\label{group__opus__multistream_ga4b3dca8d46e5868cc133f3f6d2b57688}
+
+
+Perform a CTL function on a multistream Opus decoder. Generally the request and subsequent arguments are generated by a convenience macro. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSDecoder$\ast$}: Multistream decoder state. \item[{\em request}]This and all remaining parameters should be replaced by one of the convenience macros in \hyperlink{group__opus__genericctls}{Generic CTLs}, \hyperlink{group__opus__decoderctls}{Decoder related CTLs}, or \hyperlink{group__opus__multistream__ctls}{Multistream specific encoder and decoder CTLs}. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs} 
+
+\hyperlink{group__opus__decoderctls}{Decoder related CTLs} 
+
+\hyperlink{group__opus__multistream__ctls}{Multistream specific encoder and decoder CTLs} 
+\end{DoxySeeAlso}
+\hypertarget{group__opus__multistream_gaaec72b484eabc78d7869221c6d2ce080}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decoder\_\-destroy@{opus\_\-multistream\_\-decoder\_\-destroy}}
+\index{opus\_\-multistream\_\-decoder\_\-destroy@{opus\_\-multistream\_\-decoder\_\-destroy}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decoder\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void opus\_\-multistream\_\-decoder\_\-destroy ({\bf OpusMSDecoder} $\ast$ {\em st})}}
+\label{group__opus__multistream_gaaec72b484eabc78d7869221c6d2ce080}
+
+
+Frees an {\ttfamily OpusMSDecoder} allocated by \hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create()}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSDecoder}: Multistream decoder state to be freed. \end{DoxyParams}
+\hypertarget{group__opus__multistream_ga38d745963e7903890c80278bc2569c39}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decoder\_\-get\_\-size@{opus\_\-multistream\_\-decoder\_\-get\_\-size}}
+\index{opus\_\-multistream\_\-decoder\_\-get\_\-size@{opus\_\-multistream\_\-decoder\_\-get\_\-size}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decoder\_\-get\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf opus\_\-int32} opus\_\-multistream\_\-decoder\_\-get\_\-size (int {\em streams}, \/  int {\em coupled\_\-streams})}}
+\label{group__opus__multistream_ga38d745963e7903890c80278bc2569c39}
+
+
+Gets the size of an {\ttfamily OpusMSDecoder} structure. 
+\begin{DoxyParams}{Parameters}
+\item[{\em streams}]{\ttfamily int}: The total number of streams coded in the input. This must be no more than 255. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number streams to decode as coupled (2 channel) streams. This must be no larger than the total number of streams. Additionally, The total number of coded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than 255. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size in bytes on success, or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on error. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_ga09a4d14fc497d4f6fbe76bd1c5d45436}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-decoder\_\-init@{opus\_\-multistream\_\-decoder\_\-init}}
+\index{opus\_\-multistream\_\-decoder\_\-init@{opus\_\-multistream\_\-decoder\_\-init}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-decoder\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-decoder\_\-init ({\bf OpusMSDecoder} $\ast$ {\em st}, \/  {\bf opus\_\-int32} {\em Fs}, \/  int {\em channels}, \/  int {\em streams}, \/  int {\em coupled\_\-streams}, \/  const unsigned char $\ast$ {\em mapping})}}
+\label{group__opus__multistream_ga09a4d14fc497d4f6fbe76bd1c5d45436}
+
+
+Intialize a previously allocated decoder state object. The memory pointed to by {\itshape st\/} must be at least the size returned by \hyperlink{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{opus\_\-multistream\_\-encoder\_\-get\_\-size()}. This is intended for applications which use their own allocator instead of malloc. To reset a previously initialized state, use the \hyperlink{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}{OPUS\_\-RESET\_\-STATE} CTL. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create} 
+
+opus\_\-multistream\_\-deocder\_\-get\_\-size 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state to initialize. \item[{\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate to decode at (in Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[{\em channels}]{\ttfamily int}: Number of channels to output. This must be at most 255. It may be different from the number of coded channels ({\ttfamily streams + coupled\_\-streams}). \item[{\em streams}]{\ttfamily int}: The total number of streams coded in the input. This must be no more than 255. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number of streams to decode as coupled (2 channel) streams. This must be no larger than the total number of streams. Additionally, The total number of coded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than 255. \item[\mbox{$\leftarrow$} {\em mapping}]{\ttfamily const unsigned char\mbox{[}channels\mbox{]}}: Mapping from coded channels to output channels, as described in \hyperlink{group__opus__multistream}{Opus Multistream API}. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} on success, or an error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_ga9e1000f220d9872e9f3b6e4f2417b445}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encode@{opus\_\-multistream\_\-encode}}
+\index{opus\_\-multistream\_\-encode@{opus\_\-multistream\_\-encode}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encode}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-encode ({\bf OpusMSEncoder} $\ast$ {\em st}, \/  const {\bf opus\_\-int16} $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em max\_\-data\_\-bytes})}}
+\label{group__opus__multistream_ga9e1000f220d9872e9f3b6e4f2417b445}
+
+
+Encodes a multistream Opus frame. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state. \item[\mbox{$\leftarrow$} {\em pcm}]{\ttfamily const opus\_\-int16$\ast$}: The input signal as interleaved samples. This must contain {\ttfamily frame\_\-size$\ast$channels} samples. \item[{\em frame\_\-size}]{\ttfamily int}: Number of samples per channel in the input signal. This must be an Opus frame size for the encoder's sampling rate. For example, at 48 kHz the permitted values are 120, 240, 480, 960, 1920, and 2880. Passing in a duration of less than 10 ms (480 samples at 48 kHz) will prevent the encoder from using the LPC or hybrid modes. \item[\mbox{$\rightarrow$} {\em data}]{\ttfamily unsigned char$\ast$}: Output payload. This must contain storage for at least {\itshape max\_\-data\_\-bytes\/}. \item[\mbox{$\leftarrow$} {\em max\_\-data\_\-bytes}]{\ttfamily opus\_\-int32}: Size of the allocated memory for the output payload. This may be used to impose an upper limit on the instant bitrate, but should not be used as the only bitrate control. Use \hyperlink{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}{OPUS\_\-SET\_\-BITRATE} to control the bitrate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the encoded packet (in bytes) on success or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_gaff832211e572536941b9d6094f9f42ce}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encode\_\-float@{opus\_\-multistream\_\-encode\_\-float}}
+\index{opus\_\-multistream\_\-encode\_\-float@{opus\_\-multistream\_\-encode\_\-float}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encode\_\-float}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-encode\_\-float ({\bf OpusMSEncoder} $\ast$ {\em st}, \/  const float $\ast$ {\em pcm}, \/  int {\em frame\_\-size}, \/  unsigned char $\ast$ {\em data}, \/  {\bf opus\_\-int32} {\em max\_\-data\_\-bytes})}}
+\label{group__opus__multistream_gaff832211e572536941b9d6094f9f42ce}
+
+
+Encodes a multistream Opus frame from floating point input. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state. \item[\mbox{$\leftarrow$} {\em pcm}]{\ttfamily const float$\ast$}: The input signal as interleaved samples with a normal range of +/-\/1.0. Samples with a range beyond +/-\/1.0 are supported but will be clipped by decoders using the integer API and should only be used if it is known that the far end supports extended dynamic range. This must contain {\ttfamily frame\_\-size$\ast$channels} samples. \item[{\em frame\_\-size}]{\ttfamily int}: Number of samples per channel in the input signal. This must be an Opus frame size for the encoder's sampling rate. For example, at 48 kHz the permitted values are 120, 240, 480, 960, 1920, and 2880. Passing in a duration of less than 10 ms (480 samples at 48 kHz) will prevent the encoder from using the LPC or hybrid modes. \item[\mbox{$\rightarrow$} {\em data}]{\ttfamily unsigned char$\ast$}: Output payload. This must contain storage for at least {\itshape max\_\-data\_\-bytes\/}. \item[\mbox{$\leftarrow$} {\em max\_\-data\_\-bytes}]{\ttfamily opus\_\-int32}: Size of the allocated memory for the output payload. This may be used to impose an upper limit on the instant bitrate, but should not be used as the only bitrate control. Use \hyperlink{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}{OPUS\_\-SET\_\-BITRATE} to control the bitrate. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The length of the encoded packet (in bytes) on success or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encoder\_\-create@{opus\_\-multistream\_\-encoder\_\-create}}
+\index{opus\_\-multistream\_\-encoder\_\-create@{opus\_\-multistream\_\-encoder\_\-create}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encoder\_\-create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf OpusMSEncoder}$\ast$ opus\_\-multistream\_\-encoder\_\-create ({\bf opus\_\-int32} {\em Fs}, \/  int {\em channels}, \/  int {\em streams}, \/  int {\em coupled\_\-streams}, \/  const unsigned char $\ast$ {\em mapping}, \/  int {\em application}, \/  int $\ast$ {\em error})}}
+\label{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}
+
+
+Allocates and initializes a multistream encoder state. Call \hyperlink{group__opus__multistream_gaec819b8d4b38350aba6959cee7d33f94}{opus\_\-multistream\_\-encoder\_\-destroy()} to release this object when finished. 
+\begin{DoxyParams}{Parameters}
+\item[{\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate of the input signal (in Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[{\em channels}]{\ttfamily int}: Number of channels in the input signal. This must be at most 255. It may be greater than the number of coded channels ({\ttfamily streams + coupled\_\-streams}). \item[{\em streams}]{\ttfamily int}: The total number of streams to encode from the input. This must be no more than the number of channels. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number of coupled (2 channel) streams to encode. This must be no larger than the total number of streams. Additionally, The total number of encoded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than the number of input channels. \item[\mbox{$\leftarrow$} {\em mapping}]{\ttfamily const unsigned char\mbox{[}channels\mbox{]}}: Mapping from encoded channels to input channels, as described in \hyperlink{group__opus__multistream}{Opus Multistream API}. As an extra constraint, the multistream encoder does not allow encoding coupled streams for which one channel is unused since this is never a good idea. \item[{\em application}]{\ttfamily int}: The target encoder application. This must be one of the following: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{OPUS\_\-APPLICATION\_\-VOIP} ]Process signal for improved speech intelligibility. 
+\item[\hyperlink{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{OPUS\_\-APPLICATION\_\-AUDIO} ]Favor faithfulness to the original input. 
+\item[\hyperlink{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY} ]Configure the minimum possible coding delay by disabling certain modes of operation. 
+\end{DoxyDescription}\item[\mbox{$\rightarrow$} {\em error}]{\ttfamily int $\ast$}: Returns \hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} on success, or an error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. \end{DoxyParams}
+\hypertarget{group__opus__multistream_gae14328330c548dede66c494f51e33707}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encoder\_\-ctl@{opus\_\-multistream\_\-encoder\_\-ctl}}
+\index{opus\_\-multistream\_\-encoder\_\-ctl@{opus\_\-multistream\_\-encoder\_\-ctl}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encoder\_\-ctl}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-encoder\_\-ctl ({\bf OpusMSEncoder} $\ast$ {\em st}, \/  int {\em request}, \/   {\em ...})}}
+\label{group__opus__multistream_gae14328330c548dede66c494f51e33707}
+
+
+Perform a CTL function on a multistream Opus encoder. Generally the request and subsequent arguments are generated by a convenience macro. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state. \item[{\em request}]This and all remaining parameters should be replaced by one of the convenience macros in \hyperlink{group__opus__genericctls}{Generic CTLs}, \hyperlink{group__opus__encoderctls}{Encoder related CTLs}, or \hyperlink{group__opus__multistream__ctls}{Multistream specific encoder and decoder CTLs}. \end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs} 
+
+\hyperlink{group__opus__encoderctls}{Encoder related CTLs} 
+
+\hyperlink{group__opus__multistream__ctls}{Multistream specific encoder and decoder CTLs} 
+\end{DoxySeeAlso}
+\hypertarget{group__opus__multistream_gaec819b8d4b38350aba6959cee7d33f94}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encoder\_\-destroy@{opus\_\-multistream\_\-encoder\_\-destroy}}
+\index{opus\_\-multistream\_\-encoder\_\-destroy@{opus\_\-multistream\_\-encoder\_\-destroy}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encoder\_\-destroy}]{\setlength{\rightskip}{0pt plus 5cm}void opus\_\-multistream\_\-encoder\_\-destroy ({\bf OpusMSEncoder} $\ast$ {\em st})}}
+\label{group__opus__multistream_gaec819b8d4b38350aba6959cee7d33f94}
+
+
+Frees an {\ttfamily OpusMSEncoder} allocated by \hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create()}. 
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state to be freed. \end{DoxyParams}
+\hypertarget{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encoder\_\-get\_\-size@{opus\_\-multistream\_\-encoder\_\-get\_\-size}}
+\index{opus\_\-multistream\_\-encoder\_\-get\_\-size@{opus\_\-multistream\_\-encoder\_\-get\_\-size}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encoder\_\-get\_\-size}]{\setlength{\rightskip}{0pt plus 5cm}{\bf opus\_\-int32} opus\_\-multistream\_\-encoder\_\-get\_\-size (int {\em streams}, \/  int {\em coupled\_\-streams})}}
+\label{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}
+
+
+Gets the size of an OpusMSEncoder structure. 
+\begin{DoxyParams}{Parameters}
+\item[{\em streams}]{\ttfamily int}: The total number of streams to encode from the input. This must be no more than 255. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number of coupled (2 channel) streams to encode. This must be no larger than the total number of streams. Additionally, The total number of encoded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than 255. \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The size in bytes on success, or a negative error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on error. 
+\end{DoxyReturn}
+\hypertarget{group__opus__multistream_gae7586aa54c322fd9599de24b5c8b8c01}{
+\index{opus\_\-multistream@{opus\_\-multistream}!opus\_\-multistream\_\-encoder\_\-init@{opus\_\-multistream\_\-encoder\_\-init}}
+\index{opus\_\-multistream\_\-encoder\_\-init@{opus\_\-multistream\_\-encoder\_\-init}!opus_multistream@{opus\_\-multistream}}
+\subsubsection[{opus\_\-multistream\_\-encoder\_\-init}]{\setlength{\rightskip}{0pt plus 5cm}int opus\_\-multistream\_\-encoder\_\-init ({\bf OpusMSEncoder} $\ast$ {\em st}, \/  {\bf opus\_\-int32} {\em Fs}, \/  int {\em channels}, \/  int {\em streams}, \/  int {\em coupled\_\-streams}, \/  const unsigned char $\ast$ {\em mapping}, \/  int {\em application})}}
+\label{group__opus__multistream_gae7586aa54c322fd9599de24b5c8b8c01}
+
+
+Initialize a previously allocated multistream encoder state. The memory pointed to by {\itshape st\/} must be at least the size returned by \hyperlink{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{opus\_\-multistream\_\-encoder\_\-get\_\-size()}. This is intended for applications which use their own allocator instead of malloc. To reset a previously initialized state, use the \hyperlink{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}{OPUS\_\-RESET\_\-STATE} CTL. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create} 
+
+\hyperlink{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{opus\_\-multistream\_\-encoder\_\-get\_\-size} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[{\em st}]{\ttfamily OpusMSEncoder$\ast$}: Multistream encoder state to initialize. \item[{\em Fs}]{\ttfamily opus\_\-int32}: Sampling rate of the input signal (in Hz). This must be one of 8000, 12000, 16000, 24000, or 48000. \item[{\em channels}]{\ttfamily int}: Number of channels in the input signal. This must be at most 255. It may be greater than the number of coded channels ({\ttfamily streams + coupled\_\-streams}). \item[{\em streams}]{\ttfamily int}: The total number of streams to encode from the input. This must be no more than the number of channels. \item[{\em coupled\_\-streams}]{\ttfamily int}: Number of coupled (2 channel) streams to encode. This must be no larger than the total number of streams. Additionally, The total number of encoded channels ({\ttfamily streams + coupled\_\-streams}) must be no more than the number of input channels. \item[\mbox{$\leftarrow$} {\em mapping}]{\ttfamily const unsigned char\mbox{[}channels\mbox{]}}: Mapping from encoded channels to input channels, as described in \hyperlink{group__opus__multistream}{Opus Multistream API}. As an extra constraint, the multistream encoder does not allow encoding coupled streams for which one channel is unused since this is never a good idea. \item[{\em application}]{\ttfamily int}: The target encoder application. This must be one of the following: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{OPUS\_\-APPLICATION\_\-VOIP} ]Process signal for improved speech intelligibility. 
+\item[\hyperlink{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{OPUS\_\-APPLICATION\_\-AUDIO} ]Favor faithfulness to the original input. 
+\item[\hyperlink{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY} ]Configure the minimum possible coding delay by disabling certain modes of operation. 
+\end{DoxyDescription}\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{group__opus__errorcodes_gaa44cf8a185e1b5cb940ef63eb4f02d21}{OPUS\_\-OK} on success, or an error code (see \hyperlink{group__opus__errorcodes}{Error codes}) on failure. 
+\end{DoxyReturn}

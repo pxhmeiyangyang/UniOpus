@@ -1,0 +1,34 @@
+#!/usr/bin/python
+#Import('env')
+env = Environment()
+
+sources = [
+    'src/asrclient.cpp',
+	'src/Speexwrapper.cpp',
+    ]
+
+target = 'build/asrclient'
+
+env.Append(CCFLAGS = ['-O2','-g'])
+env.Append(CPPDEFINES=["MAKING_LIB"])
+env.Append(LIBS = ['speex'])
+
+if ARGUMENTS.get('has_poll'):
+	env.Append(CPPDEFINES=["OS_HAS_POLL"])
+
+if ARGUMENTS.get('platform') == 'windows':
+	env.Append(CPPDEFINES=["WIN32"])
+	env.Append(LIBS = ['winsock32'])
+	
+elif ARGUMENTS.get('platform') == 'linux':
+	env.Append(CPPDEFINES=["LINUX"])
+
+env.Append(CPPPATH = ['#/inc/','#/','#/../speex/include/'])
+
+#env.SharedLibrary(target, sources)
+#env.StaticLibrary(target, sources)
+if ARGUMENTS.get('type') == "shared":
+	env.SharedLibrary(target,sources)
+	env.Append(LIBPATH=['#/../speex/libspeex/'])
+else:
+	env.StaticLibrary(target, sources)

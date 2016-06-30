@@ -1,0 +1,65 @@
+\hypertarget{opus__multistream_8h}{
+\section{opus\_\-multistream.h File Reference}
+\label{opus__multistream_8h}\index{opus\_\-multistream.h@{opus\_\-multistream.h}}
+}
+
+
+Opus reference implementation multistream API.  
+{\ttfamily \#include \char`\"{}opus.h\char`\"{}}\par
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__opus__multistream__ctls_ga4e67607eb691c4314a5de90d8c58aff0}{OPUS\_\-MULTISTREAM\_\-GET\_\-ENCODER\_\-STATE}(x, y)
+\begin{DoxyCompactList}\small\item\em Gets the encoder state for an individual stream of a multistream encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__multistream__ctls_gaf0843831519b4d9b9d73391afef04a53}{OPUS\_\-MULTISTREAM\_\-GET\_\-DECODER\_\-STATE}(x, y)
+\begin{DoxyCompactList}\small\item\em Gets the decoder state for an individual stream of a multistream decoder. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} \hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder}
+\begin{DoxyCompactList}\small\item\em Opus multistream encoder state. \item\end{DoxyCompactList}\item 
+typedef struct \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} \hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder}
+\begin{DoxyCompactList}\small\item\em Opus multistream decoder state. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{Indent}{\bf Multistream encoder functions}\par
+{\em \label{_amgrp3d1c363464c5de793a99376ffb2fb267}
+ }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} \hyperlink{group__opus__multistream_ga8642aa9cf16115229a655574d832293b}{opus\_\-multistream\_\-encoder\_\-get\_\-size} (int streams, int coupled\_\-streams)
+\begin{DoxyCompactList}\small\item\em Gets the size of an OpusMSEncoder structure. \item\end{DoxyCompactList}\item 
+\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$ \hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create} (\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int application, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a multistream encoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gae7586aa54c322fd9599de24b5c8b8c01}{opus\_\-multistream\_\-encoder\_\-init} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int application)
+\begin{DoxyCompactList}\small\item\em Initialize a previously allocated multistream encoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga9e1000f220d9872e9f3b6e4f2417b445}{opus\_\-multistream\_\-encode} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, const \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\_\-int16} $\ast$pcm, int frame\_\-size, unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} max\_\-data\_\-bytes)
+\begin{DoxyCompactList}\small\item\em Encodes a multistream Opus frame. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gaff832211e572536941b9d6094f9f42ce}{opus\_\-multistream\_\-encode\_\-float} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, const float $\ast$pcm, int frame\_\-size, unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} max\_\-data\_\-bytes)
+\begin{DoxyCompactList}\small\item\em Encodes a multistream Opus frame from floating point input. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__opus__multistream_gaec819b8d4b38350aba6959cee7d33f94}{opus\_\-multistream\_\-encoder\_\-destroy} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st)
+\begin{DoxyCompactList}\small\item\em Frees an {\ttfamily OpusMSEncoder} allocated by \hyperlink{group__opus__multistream_gaeb64c648ed8155f824ca8d9a93ccecae}{opus\_\-multistream\_\-encoder\_\-create()}. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gae14328330c548dede66c494f51e33707}{opus\_\-multistream\_\-encoder\_\-ctl} (\hyperlink{group__opus__multistream_gae5826674d142fc873ebc1d781c507dd7}{OpusMSEncoder} $\ast$st, int request,...)
+\begin{DoxyCompactList}\small\item\em Perform a CTL function on a multistream Opus encoder. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+\begin{Indent}{\bf Multistream decoder functions}\par
+{\em \label{_amgrpcc7358059c41f41af9a3b9b2f9644064}
+ }\begin{DoxyCompactItemize}
+\item 
+\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} \hyperlink{group__opus__multistream_ga38d745963e7903890c80278bc2569c39}{opus\_\-multistream\_\-decoder\_\-get\_\-size} (int streams, int coupled\_\-streams)
+\begin{DoxyCompactList}\small\item\em Gets the size of an {\ttfamily OpusMSDecoder} structure. \item\end{DoxyCompactList}\item 
+\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$ \hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create} (\hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping, int $\ast$error)
+\begin{DoxyCompactList}\small\item\em Allocates and initializes a multistream decoder state. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga09a4d14fc497d4f6fbe76bd1c5d45436}{opus\_\-multistream\_\-decoder\_\-init} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} Fs, int channels, int streams, int coupled\_\-streams, const unsigned char $\ast$mapping)
+\begin{DoxyCompactList}\small\item\em Intialize a previously allocated decoder state object. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_gaa4b89541efe01970cf52e4a336db3ad0}{opus\_\-multistream\_\-decode} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, \hyperlink{opus__types_8h_acc9ed7cf60479eb81f9648c6ec27dc26}{opus\_\-int16} $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode a multistream Opus packet. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga620e67c67872f8ea0b67a200c729630a}{opus\_\-multistream\_\-decode\_\-float} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, const unsigned char $\ast$data, \hyperlink{opus__types_8h_aa4d309d6f80b99dbabebc8f98879ab9a}{opus\_\-int32} len, float $\ast$pcm, int frame\_\-size, int decode\_\-fec)
+\begin{DoxyCompactList}\small\item\em Decode a multistream Opus packet with floating point output. \item\end{DoxyCompactList}\item 
+int \hyperlink{group__opus__multistream_ga4b3dca8d46e5868cc133f3f6d2b57688}{opus\_\-multistream\_\-decoder\_\-ctl} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st, int request,...)
+\begin{DoxyCompactList}\small\item\em Perform a CTL function on a multistream Opus decoder. \item\end{DoxyCompactList}\item 
+void \hyperlink{group__opus__multistream_gaaec72b484eabc78d7869221c6d2ce080}{opus\_\-multistream\_\-decoder\_\-destroy} (\hyperlink{group__opus__multistream_gad3497495deb9a8ace82e76cd4f93e0e4}{OpusMSDecoder} $\ast$st)
+\begin{DoxyCompactList}\small\item\em Frees an {\ttfamily OpusMSDecoder} allocated by \hyperlink{group__opus__multistream_ga3c0e342774174c471e61cedba53755c9}{opus\_\-multistream\_\-decoder\_\-create()}. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+\end{Indent}
+
+
+\subsection{Detailed Description}
+Opus reference implementation multistream API. 

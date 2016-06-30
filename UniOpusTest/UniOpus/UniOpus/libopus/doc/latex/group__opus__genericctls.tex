@@ -1,0 +1,105 @@
+\hypertarget{group__opus__genericctls}{
+\section{Generic CTLs}
+\label{group__opus__genericctls}\index{Generic CTLs@{Generic CTLs}}
+}
+
+
+These macros are used with the {\ttfamily opus\_\-decoder\_\-ctl} and {\ttfamily opus\_\-encoder\_\-ctl} calls to generate a particular request.  
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}{OPUS\_\-RESET\_\-STATE}
+\begin{DoxyCompactList}\small\item\em Resets the codec state to be equivalent to a freshly initialized state. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__genericctls_ga1108a508aa475f964d247c1b04d26d89}{OPUS\_\-GET\_\-FINAL\_\-RANGE}(x)
+\begin{DoxyCompactList}\small\item\em Gets the final state of the codec's entropy coder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__genericctls_gaa89fc25eb35fc31a02b508562dd83820}{OPUS\_\-GET\_\-PITCH}(x)
+\begin{DoxyCompactList}\small\item\em Gets the pitch of the last decoded frame, if available. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__genericctls_ga29db1d9b5e670debec54d1163ad2ec62}{OPUS\_\-GET\_\-BANDWIDTH}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured bandpass or the decoder's last bandpass. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+These macros are used with the {\ttfamily opus\_\-decoder\_\-ctl} and {\ttfamily opus\_\-encoder\_\-ctl} calls to generate a particular request. When called on an {\ttfamily OpusDecoder} they apply to that particular decoder instance. When called on an {\ttfamily OpusEncoder} they apply to the corresponding setting on that encoder instance, if present.
+
+Some usage examples:
+
+
+\begin{DoxyCode}
+ int ret;
+ opus_int32 pitch;
+ ret = opus_decoder_ctl(dec_ctx, OPUS_GET_PITCH(&pitch));
+ if (ret == OPUS_OK) return ret;
+
+ opus_encoder_ctl(enc_ctx, OPUS_RESET_STATE);
+ opus_decoder_ctl(dec_ctx, OPUS_RESET_STATE);
+
+ opus_int32 enc_bw, dec_bw;
+ opus_encoder_ctl(enc_ctx, OPUS_GET_BANDWIDTH(&enc_bw));
+ opus_decoder_ctl(dec_ctx, OPUS_GET_BANDWIDTH(&dec_bw));
+ if (enc_bw != dec_bw) {
+   printf("packet bandwidth mismatch!\n");
+ }
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoder}{Opus Encoder}, \hyperlink{group__opus__decoder_ga2d492844b4f66e7f34d85870f13d4846}{opus\_\-decoder\_\-ctl}, \hyperlink{group__opus__encoder_ga164cbb0425238961919adf1db67949df}{opus\_\-encoder\_\-ctl}, \hyperlink{group__opus__decoderctls}{Decoder related CTLs}, \hyperlink{group__opus__encoderctls}{Encoder related CTLs} 
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__opus__genericctls_ga29db1d9b5e670debec54d1163ad2ec62}{
+\index{opus\_\-genericctls@{opus\_\-genericctls}!OPUS\_\-GET\_\-BANDWIDTH@{OPUS\_\-GET\_\-BANDWIDTH}}
+\index{OPUS\_\-GET\_\-BANDWIDTH@{OPUS\_\-GET\_\-BANDWIDTH}!opus_genericctls@{opus\_\-genericctls}}
+\subsubsection[{OPUS\_\-GET\_\-BANDWIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-BANDWIDTH(x)}}
+\label{group__opus__genericctls_ga29db1d9b5e670debec54d1163ad2ec62}
+
+
+Gets the encoder's configured bandpass or the decoder's last bandpass. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga0178dabe5526d5b0667d81489cc93791}{OPUS\_\-SET\_\-BANDWIDTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO} ](default) 
+\item[\hyperlink{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}{OPUS\_\-BANDWIDTH\_\-NARROWBAND} ]4 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND} ]6 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}{OPUS\_\-BANDWIDTH\_\-WIDEBAND} ]8 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}]12 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}{OPUS\_\-BANDWIDTH\_\-FULLBAND} ]20 kHz passband 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__genericctls_ga1108a508aa475f964d247c1b04d26d89}{
+\index{opus\_\-genericctls@{opus\_\-genericctls}!OPUS\_\-GET\_\-FINAL\_\-RANGE@{OPUS\_\-GET\_\-FINAL\_\-RANGE}}
+\index{OPUS\_\-GET\_\-FINAL\_\-RANGE@{OPUS\_\-GET\_\-FINAL\_\-RANGE}!opus_genericctls@{opus\_\-genericctls}}
+\subsubsection[{OPUS\_\-GET\_\-FINAL\_\-RANGE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-FINAL\_\-RANGE(x)}}
+\label{group__opus__genericctls_ga1108a508aa475f964d247c1b04d26d89}
+
+
+Gets the final state of the codec's entropy coder. This is used for testing purposes, The encoder and decoder state should be identical after coding a payload (assuming no data corruption or software bugs)
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-uint32 $\ast$}: Entropy coder state \end{DoxyParams}
+\hypertarget{group__opus__genericctls_gaa89fc25eb35fc31a02b508562dd83820}{
+\index{opus\_\-genericctls@{opus\_\-genericctls}!OPUS\_\-GET\_\-PITCH@{OPUS\_\-GET\_\-PITCH}}
+\index{OPUS\_\-GET\_\-PITCH@{OPUS\_\-GET\_\-PITCH}!opus_genericctls@{opus\_\-genericctls}}
+\subsubsection[{OPUS\_\-GET\_\-PITCH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-PITCH(x)}}
+\label{group__opus__genericctls_gaa89fc25eb35fc31a02b508562dd83820}
+
+
+Gets the pitch of the last decoded frame, if available. This can be used for any post-\/processing algorithm requiring the use of pitch, e.g. time stretching/shortening. If the last frame was not voiced, or if the pitch was not coded in the frame, then zero is returned.
+
+This CTL is only implemented for decoder instances.
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: pitch period at 48 kHz (or 0 if not available) \end{DoxyParams}
+\hypertarget{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}{
+\index{opus\_\-genericctls@{opus\_\-genericctls}!OPUS\_\-RESET\_\-STATE@{OPUS\_\-RESET\_\-STATE}}
+\index{OPUS\_\-RESET\_\-STATE@{OPUS\_\-RESET\_\-STATE}!opus_genericctls@{opus\_\-genericctls}}
+\subsubsection[{OPUS\_\-RESET\_\-STATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-RESET\_\-STATE}}
+\label{group__opus__genericctls_gadc74e4fa8bcdf9994187d52d92207337}
+
+
+Resets the codec state to be equivalent to a freshly initialized state. This should be called when switching streams in order to prevent the back to back decoding from giving different results from one at a time decoding. 

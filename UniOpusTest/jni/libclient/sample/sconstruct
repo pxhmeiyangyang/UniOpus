@@ -1,0 +1,25 @@
+#!/usr/bin/python
+#Import('env')
+env = Environment()
+
+sources = [
+    'src/sample.cpp',
+    ]
+
+target = 'sample'
+
+env.Append(LIBPATH=['#/../../speex/libspeex/'])
+env.Append(LIBS = ['speex'])
+
+env.Append(CCFLAGS = ['-O2','-g'])
+env.Append(CPPPATH = ['#/../inc/'])
+env.Append(LIBPATH = ['#/../build/'])
+env.Append(LIBS = ['asrclient'])
+env.Program(target,sources)
+
+#if env['type'] == 'shared':
+#    obj = env.SharedObject(sources)
+#else:
+#    obj = env.Object(sources)
+#
+#Return('obj')

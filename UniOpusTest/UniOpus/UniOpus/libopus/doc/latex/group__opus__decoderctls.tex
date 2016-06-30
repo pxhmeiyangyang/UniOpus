@@ -1,0 +1,47 @@
+\hypertarget{group__opus__decoderctls}{
+\section{Decoder related CTLs}
+\label{group__opus__decoderctls}\index{Decoder related CTLs@{Decoder related CTLs}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__opus__decoderctls_ga8ddb6fa694efa2c7e95ef51addc70dac}{OPUS\_\-SET\_\-GAIN}(x)
+\begin{DoxyCompactList}\small\item\em Configures decoder gain adjustment. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__decoderctls_ga00ca8b4bd753a837f143ebd8ed63d247}{OPUS\_\-GET\_\-GAIN}(x)
+\begin{DoxyCompactList}\small\item\em Gets the decoder's configured gain adjustment. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs}, \hyperlink{group__opus__encoderctls}{Encoder related CTLs}, \hyperlink{group__opus__decoder}{Opus Decoder} 
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__opus__decoderctls_ga00ca8b4bd753a837f143ebd8ed63d247}{
+\index{opus\_\-decoderctls@{opus\_\-decoderctls}!OPUS\_\-GET\_\-GAIN@{OPUS\_\-GET\_\-GAIN}}
+\index{OPUS\_\-GET\_\-GAIN@{OPUS\_\-GET\_\-GAIN}!opus_decoderctls@{opus\_\-decoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-GAIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-GAIN(x)}}
+\label{group__opus__decoderctls_ga00ca8b4bd753a837f143ebd8ed63d247}
+
+
+Gets the decoder's configured gain adjustment. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__decoderctls_ga8ddb6fa694efa2c7e95ef51addc70dac}{OPUS\_\-SET\_\-GAIN}
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Amount to scale PCM signal by in Q8 dB units. \end{DoxyParams}
+\hypertarget{group__opus__decoderctls_ga8ddb6fa694efa2c7e95ef51addc70dac}{
+\index{opus\_\-decoderctls@{opus\_\-decoderctls}!OPUS\_\-SET\_\-GAIN@{OPUS\_\-SET\_\-GAIN}}
+\index{OPUS\_\-SET\_\-GAIN@{OPUS\_\-SET\_\-GAIN}!opus_decoderctls@{opus\_\-decoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-GAIN}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-GAIN(x)}}
+\label{group__opus__decoderctls_ga8ddb6fa694efa2c7e95ef51addc70dac}
+
+
+Configures decoder gain adjustment. Scales the decoded output by a factor specified in Q8 dB units. This has a maximum range of -\/32768 to 32767 inclusive, and returns OPUS\_\-BAD\_\-ARG otherwise. The default is zero indicating no adjustment. This setting survives decoder reset.
+
+gain = pow(10, x/(20.0$\ast$256))
+
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Amount to scale PCM signal by in Q8 dB units. \end{DoxyParams}

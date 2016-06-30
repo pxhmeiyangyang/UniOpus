@@ -1,0 +1,125 @@
+\hypertarget{group__opus__ctlvalues}{
+\section{Pre-\/defined values for CTL interface}
+\label{group__opus__ctlvalues}\index{Pre-\/defined values for CTL interface@{Pre-\/defined values for CTL interface}}
+}
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO}
+\begin{DoxyCompactList}\small\item\em Auto/default setting. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_gaeadbaa3b4b9e15d39cd1d6e7d91519e5}{OPUS\_\-BITRATE\_\-MAX}
+\begin{DoxyCompactList}\small\item\em Maximum bitrate. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{OPUS\_\-APPLICATION\_\-VOIP}
+\begin{DoxyCompactList}\small\item\em Best for most VoIP/videoconference applications where listening quality and intelligibility matter most. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{OPUS\_\-APPLICATION\_\-AUDIO}
+\begin{DoxyCompactList}\small\item\em Best for broadcast/high-\/fidelity application where the decoded audio should be as close as possible to the input. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY}
+\begin{DoxyCompactList}\small\item\em Only use when lowest-\/achievable latency is what matters most. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga085a116fed816373d3b9eae28df49404}{OPUS\_\-SIGNAL\_\-VOICE}~3001
+\begin{DoxyCompactList}\small\item\em Signal being encoded is voice. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_gaa0c228c664b6d426f4c213e3a5350889}{OPUS\_\-SIGNAL\_\-MUSIC}~3002
+\begin{DoxyCompactList}\small\item\em Signal being encoded is music. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}{OPUS\_\-BANDWIDTH\_\-NARROWBAND}
+\begin{DoxyCompactList}\small\item\em 4 kHz bandpass \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}
+\begin{DoxyCompactList}\small\item\em 6 kHz bandpass \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}{OPUS\_\-BANDWIDTH\_\-WIDEBAND}
+\begin{DoxyCompactList}\small\item\em 8 kHz bandpass \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}
+\begin{DoxyCompactList}\small\item\em 12 kHz bandpass \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}{OPUS\_\-BANDWIDTH\_\-FULLBAND}
+\begin{DoxyCompactList}\small\item\em 20 kHz bandpass \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs}, \hyperlink{group__opus__encoderctls}{Encoder related CTLs} 
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-APPLICATION\_\-AUDIO@{OPUS\_\-APPLICATION\_\-AUDIO}}
+\index{OPUS\_\-APPLICATION\_\-AUDIO@{OPUS\_\-APPLICATION\_\-AUDIO}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-APPLICATION\_\-AUDIO}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-APPLICATION\_\-AUDIO}}
+\label{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}
+
+
+Best for broadcast/high-\/fidelity application where the decoded audio should be as close as possible to the input. \hypertarget{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY@{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY}}
+\index{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY@{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY}}
+\label{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}
+
+
+Only use when lowest-\/achievable latency is what matters most. Voice-\/optimized modes cannot be used. \hypertarget{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-APPLICATION\_\-VOIP@{OPUS\_\-APPLICATION\_\-VOIP}}
+\index{OPUS\_\-APPLICATION\_\-VOIP@{OPUS\_\-APPLICATION\_\-VOIP}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-APPLICATION\_\-VOIP}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-APPLICATION\_\-VOIP}}
+\label{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}
+
+
+Best for most VoIP/videoconference applications where listening quality and intelligibility matter most. \hypertarget{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-AUTO@{OPUS\_\-AUTO}}
+\index{OPUS\_\-AUTO@{OPUS\_\-AUTO}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-AUTO}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-AUTO}}
+\label{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}
+
+
+Auto/default setting. \hypertarget{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BANDWIDTH\_\-FULLBAND@{OPUS\_\-BANDWIDTH\_\-FULLBAND}}
+\index{OPUS\_\-BANDWIDTH\_\-FULLBAND@{OPUS\_\-BANDWIDTH\_\-FULLBAND}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BANDWIDTH\_\-FULLBAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BANDWIDTH\_\-FULLBAND}}
+\label{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}
+
+
+20 kHz bandpass \hypertarget{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BANDWIDTH\_\-MEDIUMBAND@{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}}
+\index{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND@{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BANDWIDTH\_\-MEDIUMBAND}}
+\label{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}
+
+
+6 kHz bandpass \hypertarget{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BANDWIDTH\_\-NARROWBAND@{OPUS\_\-BANDWIDTH\_\-NARROWBAND}}
+\index{OPUS\_\-BANDWIDTH\_\-NARROWBAND@{OPUS\_\-BANDWIDTH\_\-NARROWBAND}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BANDWIDTH\_\-NARROWBAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BANDWIDTH\_\-NARROWBAND}}
+\label{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}
+
+
+4 kHz bandpass \hypertarget{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND@{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}}
+\index{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND@{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}}
+\label{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}
+
+
+12 kHz bandpass \hypertarget{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BANDWIDTH\_\-WIDEBAND@{OPUS\_\-BANDWIDTH\_\-WIDEBAND}}
+\index{OPUS\_\-BANDWIDTH\_\-WIDEBAND@{OPUS\_\-BANDWIDTH\_\-WIDEBAND}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BANDWIDTH\_\-WIDEBAND}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BANDWIDTH\_\-WIDEBAND}}
+\label{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}
+
+
+8 kHz bandpass \hypertarget{group__opus__ctlvalues_gaeadbaa3b4b9e15d39cd1d6e7d91519e5}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-BITRATE\_\-MAX@{OPUS\_\-BITRATE\_\-MAX}}
+\index{OPUS\_\-BITRATE\_\-MAX@{OPUS\_\-BITRATE\_\-MAX}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-BITRATE\_\-MAX}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-BITRATE\_\-MAX}}
+\label{group__opus__ctlvalues_gaeadbaa3b4b9e15d39cd1d6e7d91519e5}
+
+
+Maximum bitrate. \hypertarget{group__opus__ctlvalues_gaa0c228c664b6d426f4c213e3a5350889}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-SIGNAL\_\-MUSIC@{OPUS\_\-SIGNAL\_\-MUSIC}}
+\index{OPUS\_\-SIGNAL\_\-MUSIC@{OPUS\_\-SIGNAL\_\-MUSIC}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-SIGNAL\_\-MUSIC}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SIGNAL\_\-MUSIC~3002}}
+\label{group__opus__ctlvalues_gaa0c228c664b6d426f4c213e3a5350889}
+
+
+Signal being encoded is music. \hypertarget{group__opus__ctlvalues_ga085a116fed816373d3b9eae28df49404}{
+\index{opus\_\-ctlvalues@{opus\_\-ctlvalues}!OPUS\_\-SIGNAL\_\-VOICE@{OPUS\_\-SIGNAL\_\-VOICE}}
+\index{OPUS\_\-SIGNAL\_\-VOICE@{OPUS\_\-SIGNAL\_\-VOICE}!opus_ctlvalues@{opus\_\-ctlvalues}}
+\subsubsection[{OPUS\_\-SIGNAL\_\-VOICE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SIGNAL\_\-VOICE~3001}}
+\label{group__opus__ctlvalues_ga085a116fed816373d3b9eae28df49404}
+
+
+Signal being encoded is voice. 

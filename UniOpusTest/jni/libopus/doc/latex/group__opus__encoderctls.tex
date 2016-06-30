@@ -1,0 +1,553 @@
+\hypertarget{group__opus__encoderctls}{
+\section{Encoder related CTLs}
+\label{group__opus__encoderctls}\index{Encoder related CTLs@{Encoder related CTLs}}
+}
+
+
+These are convenience macros for use with the {\ttfamily opus\_\-encode\_\-ctl} interface.  
+\subsection*{Defines}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{group__opus__encoderctls_ga3483877bf1687a75dd4a1de6f85f291c}{OPUS\_\-SET\_\-COMPLEXITY}(x)
+\begin{DoxyCompactList}\small\item\em Configures the encoder's computational complexity. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga89755ee721a38d964c7630a920eb27d2}{OPUS\_\-GET\_\-COMPLEXITY}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's complexity configuration. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}{OPUS\_\-SET\_\-BITRATE}(x)
+\begin{DoxyCompactList}\small\item\em Configures the bitrate in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga1427a5560cbc7e9a59f986d89c05082c}{OPUS\_\-GET\_\-BITRATE}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's bitrate configuration. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga34d09ae06cab7e1a6c49876249b67892}{OPUS\_\-SET\_\-VBR}(x)
+\begin{DoxyCompactList}\small\item\em Enables or disables variable bitrate (VBR) in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga58feba30c167962305ec268e6abe8c08}{OPUS\_\-GET\_\-VBR}(x)
+\begin{DoxyCompactList}\small\item\em Determine if variable bitrate (VBR) is enabled in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT}(x)
+\begin{DoxyCompactList}\small\item\em Enables or disables constrained VBR in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT}(x)
+\begin{DoxyCompactList}\small\item\em Determine if constrained VBR is enabled in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga8450a745bd919a8de522afec115f3b5f}{OPUS\_\-SET\_\-FORCE\_\-CHANNELS}(x)
+\begin{DoxyCompactList}\small\item\em Configures mono/stereo forcing in the encoder. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga21f010167c5dfa1b53f20c46d473e86a}{OPUS\_\-GET\_\-FORCE\_\-CHANNELS}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's forced channel configuration. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga4f88288e89c595c07c61db316cc45289}{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH}(x)
+\begin{DoxyCompactList}\small\item\em Configures the maximum bandpass that the encoder will select automatically. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaa3b5736de64792e1144ce12dfb87613c}{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured maximum allowed bandpass. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga0178dabe5526d5b0667d81489cc93791}{OPUS\_\-SET\_\-BANDWIDTH}(x)
+\begin{DoxyCompactList}\small\item\em Sets the encoder's bandpass to a specific value. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaaa87ccee4ae46aa6c9528e03c5122b89}{OPUS\_\-SET\_\-SIGNAL}(x)
+\begin{DoxyCompactList}\small\item\em Configures the type of signal being encoded. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga640d434de535e2d2caec991c347303a4}{OPUS\_\-GET\_\-SIGNAL}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured signal type. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga18fa17dae52ff8f3eaea314204bf1a36}{OPUS\_\-SET\_\-APPLICATION}(x)
+\begin{DoxyCompactList}\small\item\em Configures the encoder's intended application. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga062ebbc209caf6832fe4a309a459fd4c}{OPUS\_\-GET\_\-APPLICATION}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured application. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gac8ad425424211faae6a0fbfb7c28bb51}{OPUS\_\-GET\_\-SAMPLE\_\-RATE}(x)
+\begin{DoxyCompactList}\small\item\em Gets the sampling rate the encoder or decoder was initialized with. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaf81b9e01501910adc67195ebb42b4a54}{OPUS\_\-GET\_\-LOOKAHEAD}(x)
+\begin{DoxyCompactList}\small\item\em Gets the total samples of delay added by the entire codec. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga5b67dc832aa46c1c2f35752c46380545}{OPUS\_\-SET\_\-INBAND\_\-FEC}(x)
+\begin{DoxyCompactList}\small\item\em Configures the encoder's use of inband forward error correction (FEC). \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaf792b27a6277ddf786413dbf472d0ac8}{OPUS\_\-GET\_\-INBAND\_\-FEC}(x)
+\begin{DoxyCompactList}\small\item\em Gets encoder's configured use of inband forward error correction. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gafda1c951dea919ba54432cd03827f1a9}{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC}(x)
+\begin{DoxyCompactList}\small\item\em Configures the encoder's expected packet loss percentage. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaa79261c6a55444993fca8d3a3a29d519}{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured packet loss percentage. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga4f053b2db8c5162293213aabfe123773}{OPUS\_\-SET\_\-DTX}(x)
+\begin{DoxyCompactList}\small\item\em Configures the encoder's use of discontinuous transmission (DTX). \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaafbb44454e9f57232b85e4e087337ded}{OPUS\_\-GET\_\-DTX}(x)
+\begin{DoxyCompactList}\small\item\em Gets encoder's configured use of discontinuous transmission. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gaa23940eb477ff617edc14b8d66e104c0}{OPUS\_\-SET\_\-LSB\_\-DEPTH}(x)
+\begin{DoxyCompactList}\small\item\em Configures the depth of signal being encoded. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_gab5ecdfbbbabfaefc2f2ca79cf4a3b08f}{OPUS\_\-GET\_\-LSB\_\-DEPTH}(x)
+\begin{DoxyCompactList}\small\item\em Gets the encoder's configured signal depth. \item\end{DoxyCompactList}\item 
+\#define \hyperlink{group__opus__encoderctls_ga8f3d070f56b75f2a7af54e5776b387fa}{OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION}(x)
+\begin{DoxyCompactList}\small\item\em Gets the duration (in samples) of the last packet successfully decoded or concealed. \item\end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+These are convenience macros for use with the {\ttfamily opus\_\-encode\_\-ctl} interface. They are used to generate the appropriate series of arguments for that call, passing the correct type, size and so on as expected for each particular request.
+
+Some usage examples:
+
+
+\begin{DoxyCode}
+ int ret;
+ ret = opus_encoder_ctl(enc_ctx, OPUS_SET_BANDWIDTH(OPUS_AUTO));
+ if (ret != OPUS_OK) return ret;
+
+ opus_int32 rate;
+ opus_encoder_ctl(enc_ctx, OPUS_GET_BANDWIDTH(&rate));
+
+ opus_encoder_ctl(enc_ctx, OPUS_RESET_STATE);
+\end{DoxyCode}
+
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls}{Generic CTLs}, \hyperlink{group__opus__encoder}{Opus Encoder} 
+\end{DoxySeeAlso}
+
+
+\subsection{Define Documentation}
+\hypertarget{group__opus__encoderctls_ga062ebbc209caf6832fe4a309a459fd4c}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-APPLICATION@{OPUS\_\-GET\_\-APPLICATION}}
+\index{OPUS\_\-GET\_\-APPLICATION@{OPUS\_\-GET\_\-APPLICATION}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-APPLICATION}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-APPLICATION(x)}}
+\label{group__opus__encoderctls_ga062ebbc209caf6832fe4a309a459fd4c}
+
+
+Gets the encoder's configured application. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga18fa17dae52ff8f3eaea314204bf1a36}{OPUS\_\-SET\_\-APPLICATION} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{OPUS\_\-APPLICATION\_\-VOIP} ]Process signal for improved speech intelligibility. 
+\item[\hyperlink{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{OPUS\_\-APPLICATION\_\-AUDIO} ]Favor faithfulness to the original input. 
+\item[\hyperlink{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY} ]Configure the minimum possible coding delay by disabling certain modes of operation. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga1427a5560cbc7e9a59f986d89c05082c}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-BITRATE@{OPUS\_\-GET\_\-BITRATE}}
+\index{OPUS\_\-GET\_\-BITRATE@{OPUS\_\-GET\_\-BITRATE}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-BITRATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-BITRATE(x)}}
+\label{group__opus__encoderctls_ga1427a5560cbc7e9a59f986d89c05082c}
+
+
+Gets the encoder's bitrate configuration. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}{OPUS\_\-SET\_\-BITRATE} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns the bitrate in bits per second. The default is determined based on the number of channels and the input sampling rate. \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga89755ee721a38d964c7630a920eb27d2}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-COMPLEXITY@{OPUS\_\-GET\_\-COMPLEXITY}}
+\index{OPUS\_\-GET\_\-COMPLEXITY@{OPUS\_\-GET\_\-COMPLEXITY}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-COMPLEXITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-COMPLEXITY(x)}}
+\label{group__opus__encoderctls_ga89755ee721a38d964c7630a920eb27d2}
+
+
+Gets the encoder's complexity configuration. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga3483877bf1687a75dd4a1de6f85f291c}{OPUS\_\-SET\_\-COMPLEXITY} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns a value in the range 0-\/10, inclusive. \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaafbb44454e9f57232b85e4e087337ded}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-DTX@{OPUS\_\-GET\_\-DTX}}
+\index{OPUS\_\-GET\_\-DTX@{OPUS\_\-GET\_\-DTX}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-DTX}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-DTX(x)}}
+\label{group__opus__encoderctls_gaafbb44454e9f57232b85e4e087337ded}
+
+
+Gets encoder's configured use of discontinuous transmission. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga4f053b2db8c5162293213aabfe123773}{OPUS\_\-SET\_\-DTX} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[0]DTX disabled (default). 
+\item[1]DTX enabled. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga21f010167c5dfa1b53f20c46d473e86a}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-FORCE\_\-CHANNELS@{OPUS\_\-GET\_\-FORCE\_\-CHANNELS}}
+\index{OPUS\_\-GET\_\-FORCE\_\-CHANNELS@{OPUS\_\-GET\_\-FORCE\_\-CHANNELS}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-FORCE\_\-CHANNELS}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-FORCE\_\-CHANNELS(x)}}
+\label{group__opus__encoderctls_ga21f010167c5dfa1b53f20c46d473e86a}
+
+
+Gets the encoder's forced channel configuration. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga8450a745bd919a8de522afec115f3b5f}{OPUS\_\-SET\_\-FORCE\_\-CHANNELS} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO}]Not forced (default) 
+\item[1 ]Forced mono 
+\item[2 ]Forced stereo 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaf792b27a6277ddf786413dbf472d0ac8}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-INBAND\_\-FEC@{OPUS\_\-GET\_\-INBAND\_\-FEC}}
+\index{OPUS\_\-GET\_\-INBAND\_\-FEC@{OPUS\_\-GET\_\-INBAND\_\-FEC}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-INBAND\_\-FEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-INBAND\_\-FEC(x)}}
+\label{group__opus__encoderctls_gaf792b27a6277ddf786413dbf472d0ac8}
+
+
+Gets encoder's configured use of inband forward error correction. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga5b67dc832aa46c1c2f35752c46380545}{OPUS\_\-SET\_\-INBAND\_\-FEC} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[0]Inband FEC disabled (default). 
+\item[1]Inband FEC enabled. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga8f3d070f56b75f2a7af54e5776b387fa}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION@{OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION}}
+\index{OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION@{OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-LAST\_\-PACKET\_\-DURATION(x)}}
+\label{group__opus__encoderctls_ga8f3d070f56b75f2a7af54e5776b387fa}
+
+
+Gets the duration (in samples) of the last packet successfully decoded or concealed. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Number of samples (at current sampling rate). \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaf81b9e01501910adc67195ebb42b4a54}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-LOOKAHEAD@{OPUS\_\-GET\_\-LOOKAHEAD}}
+\index{OPUS\_\-GET\_\-LOOKAHEAD@{OPUS\_\-GET\_\-LOOKAHEAD}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-LOOKAHEAD}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-LOOKAHEAD(x)}}
+\label{group__opus__encoderctls_gaf81b9e01501910adc67195ebb42b4a54}
+
+
+Gets the total samples of delay added by the entire codec. This can be queried by the encoder and then the provided number of samples can be skipped on from the start of the decoder's output to provide time aligned input and output. From the perspective of a decoding application the real data begins this many samples late.
+
+The decoder contribution to this delay is identical for all decoders, but the encoder portion of the delay may vary from implementation to implementation, version to version, or even depend on the encoder's initial configuration. Applications needing delay compensation should call this CTL rather than hard-\/coding a value. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Number of lookahead samples \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gab5ecdfbbbabfaefc2f2ca79cf4a3b08f}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-LSB\_\-DEPTH@{OPUS\_\-GET\_\-LSB\_\-DEPTH}}
+\index{OPUS\_\-GET\_\-LSB\_\-DEPTH@{OPUS\_\-GET\_\-LSB\_\-DEPTH}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-LSB\_\-DEPTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-LSB\_\-DEPTH(x)}}
+\label{group__opus__encoderctls_gab5ecdfbbbabfaefc2f2ca79cf4a3b08f}
+
+
+Gets the encoder's configured signal depth. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaa23940eb477ff617edc14b8d66e104c0}{OPUS\_\-SET\_\-LSB\_\-DEPTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Input precision in bits, between 8 and 24 (default: 24). \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaa3b5736de64792e1144ce12dfb87613c}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-MAX\_\-BANDWIDTH@{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH}}
+\index{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH@{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-MAX\_\-BANDWIDTH(x)}}
+\label{group__opus__encoderctls_gaa3b5736de64792e1144ce12dfb87613c}
+
+
+Gets the encoder's configured maximum allowed bandpass. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga4f88288e89c595c07c61db316cc45289}{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Allowed values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}{OPUS\_\-BANDWIDTH\_\-NARROWBAND} ]4 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND} ]6 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}{OPUS\_\-BANDWIDTH\_\-WIDEBAND} ]8 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}]12 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}{OPUS\_\-BANDWIDTH\_\-FULLBAND} ]20 kHz passband (default) 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaa79261c6a55444993fca8d3a3a29d519}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC@{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC}}
+\index{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC@{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC(x)}}
+\label{group__opus__encoderctls_gaa79261c6a55444993fca8d3a3a29d519}
+
+
+Gets the encoder's configured packet loss percentage. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gafda1c951dea919ba54432cd03827f1a9}{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns the configured loss percentage in the range 0-\/100, inclusive (default: 0). \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gac8ad425424211faae6a0fbfb7c28bb51}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-SAMPLE\_\-RATE@{OPUS\_\-GET\_\-SAMPLE\_\-RATE}}
+\index{OPUS\_\-GET\_\-SAMPLE\_\-RATE@{OPUS\_\-GET\_\-SAMPLE\_\-RATE}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-SAMPLE\_\-RATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-SAMPLE\_\-RATE(x)}}
+\label{group__opus__encoderctls_gac8ad425424211faae6a0fbfb7c28bb51}
+
+
+Gets the sampling rate the encoder or decoder was initialized with. This simply returns the {\ttfamily Fs} value passed to \hyperlink{group__opus__encoder_ga515db1c267a7421dacaad3610f79eb79}{opus\_\-encoder\_\-init()} or \hyperlink{group__opus__decoder_ga939156d1f561c4273d5c62fa9c235a01}{opus\_\-decoder\_\-init()}. 
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Sampling rate of encoder or decoder. \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga640d434de535e2d2caec991c347303a4}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-SIGNAL@{OPUS\_\-GET\_\-SIGNAL}}
+\index{OPUS\_\-GET\_\-SIGNAL@{OPUS\_\-GET\_\-SIGNAL}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-SIGNAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-SIGNAL(x)}}
+\label{group__opus__encoderctls_ga640d434de535e2d2caec991c347303a4}
+
+
+Gets the encoder's configured signal type. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaaa87ccee4ae46aa6c9528e03c5122b89}{OPUS\_\-SET\_\-SIGNAL} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO} ](default) 
+\item[\hyperlink{group__opus__ctlvalues_ga085a116fed816373d3b9eae28df49404}{OPUS\_\-SIGNAL\_\-VOICE}]Bias thresholds towards choosing LPC or Hybrid modes. 
+\item[\hyperlink{group__opus__ctlvalues_gaa0c228c664b6d426f4c213e3a5350889}{OPUS\_\-SIGNAL\_\-MUSIC}]Bias thresholds towards choosing MDCT modes. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga58feba30c167962305ec268e6abe8c08}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-VBR@{OPUS\_\-GET\_\-VBR}}
+\index{OPUS\_\-GET\_\-VBR@{OPUS\_\-GET\_\-VBR}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-VBR}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-VBR(x)}}
+\label{group__opus__encoderctls_ga58feba30c167962305ec268e6abe8c08}
+
+
+Determine if variable bitrate (VBR) is enabled in the encoder. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga34d09ae06cab7e1a6c49876249b67892}{OPUS\_\-SET\_\-VBR} 
+
+\hyperlink{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[0]Hard CBR. 
+\item[1]VBR (default). The exact type of VBR may be retrieved via \hyperlink{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT}. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-GET\_\-VBR\_\-CONSTRAINT@{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT}}
+\index{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT@{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-GET\_\-VBR\_\-CONSTRAINT(x)}}
+\label{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}
+
+
+Determine if constrained VBR is enabled in the encoder. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT} 
+
+\hyperlink{group__opus__encoderctls_ga58feba30c167962305ec268e6abe8c08}{OPUS\_\-GET\_\-VBR} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\rightarrow$} {\em x}]{\ttfamily opus\_\-int32 $\ast$}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[0]Unconstrained VBR. 
+\item[1]Constrained VBR (default). 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga18fa17dae52ff8f3eaea314204bf1a36}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-APPLICATION@{OPUS\_\-SET\_\-APPLICATION}}
+\index{OPUS\_\-SET\_\-APPLICATION@{OPUS\_\-SET\_\-APPLICATION}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-APPLICATION}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-APPLICATION(x)}}
+\label{group__opus__encoderctls_ga18fa17dae52ff8f3eaea314204bf1a36}
+
+
+Configures the encoder's intended application. The initial value is a mandatory argument to the encoder\_\-create function. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga062ebbc209caf6832fe4a309a459fd4c}{OPUS\_\-GET\_\-APPLICATION} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Returns one of the following values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga07884aa018303a419d1f7acb2f3fa669}{OPUS\_\-APPLICATION\_\-VOIP} ]Process signal for improved speech intelligibility. 
+\item[\hyperlink{group__opus__ctlvalues_ga5909f7cb35c04f1110026c6889edd345}{OPUS\_\-APPLICATION\_\-AUDIO} ]Favor faithfulness to the original input. 
+\item[\hyperlink{group__opus__ctlvalues_ga592232fb39db60c1369989c5c5d19a07}{OPUS\_\-APPLICATION\_\-RESTRICTED\_\-LOWDELAY} ]Configure the minimum possible coding delay by disabling certain modes of operation. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga0178dabe5526d5b0667d81489cc93791}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-BANDWIDTH@{OPUS\_\-SET\_\-BANDWIDTH}}
+\index{OPUS\_\-SET\_\-BANDWIDTH@{OPUS\_\-SET\_\-BANDWIDTH}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-BANDWIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-BANDWIDTH(x)}}
+\label{group__opus__encoderctls_ga0178dabe5526d5b0667d81489cc93791}
+
+
+Sets the encoder's bandpass to a specific value. This prevents the encoder from automatically selecting the bandpass based on the available bitrate. If an application knows the bandpass of the input audio it is providing, it should normally use \hyperlink{group__opus__encoderctls_ga4f88288e89c595c07c61db316cc45289}{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH} instead, which still gives the encoder the freedom to reduce the bandpass when the bitrate becomes too low, for better overall quality. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__genericctls_ga29db1d9b5e670debec54d1163ad2ec62}{OPUS\_\-GET\_\-BANDWIDTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO} ](default) 
+\item[\hyperlink{group__opus__ctlvalues_ga607dd310958b9c7d545d005e4572d47f}{OPUS\_\-BANDWIDTH\_\-NARROWBAND} ]4 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga53a2aff4dc0ee23682927ca568c422a3}{OPUS\_\-BANDWIDTH\_\-MEDIUMBAND} ]6 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_gac698e5d1281a3632251d2a4ead48afb9}{OPUS\_\-BANDWIDTH\_\-WIDEBAND} ]8 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga41f86df35af0033a7361895da88671c1}{OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND}]12 kHz passband 
+\item[\hyperlink{group__opus__ctlvalues_ga74cb052d8ec36cbcc9708c417558ebdd}{OPUS\_\-BANDWIDTH\_\-FULLBAND} ]20 kHz passband 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-BITRATE@{OPUS\_\-SET\_\-BITRATE}}
+\index{OPUS\_\-SET\_\-BITRATE@{OPUS\_\-SET\_\-BITRATE}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-BITRATE}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-BITRATE(x)}}
+\label{group__opus__encoderctls_ga0bb51947e355b33d0cb358463b5101a7}
+
+
+Configures the bitrate in the encoder. Rates from 500 to 512000 bits per second are meaningful, as well as the special values \hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO} and \hyperlink{group__opus__ctlvalues_gaeadbaa3b4b9e15d39cd1d6e7d91519e5}{OPUS\_\-BITRATE\_\-MAX}. The value \hyperlink{group__opus__ctlvalues_gaeadbaa3b4b9e15d39cd1d6e7d91519e5}{OPUS\_\-BITRATE\_\-MAX} can be used to cause the codec to use as much rate as it can, which is useful for controlling the rate by adjusting the output buffer size. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga1427a5560cbc7e9a59f986d89c05082c}{OPUS\_\-GET\_\-BITRATE} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Bitrate in bits per second. The default is determined based on the number of channels and the input sampling rate. \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga3483877bf1687a75dd4a1de6f85f291c}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-COMPLEXITY@{OPUS\_\-SET\_\-COMPLEXITY}}
+\index{OPUS\_\-SET\_\-COMPLEXITY@{OPUS\_\-SET\_\-COMPLEXITY}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-COMPLEXITY}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-COMPLEXITY(x)}}
+\label{group__opus__encoderctls_ga3483877bf1687a75dd4a1de6f85f291c}
+
+
+Configures the encoder's computational complexity. The supported range is 0-\/10 inclusive with 10 representing the highest complexity. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga89755ee721a38d964c7630a920eb27d2}{OPUS\_\-GET\_\-COMPLEXITY} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 0-\/10, inclusive. \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga4f053b2db8c5162293213aabfe123773}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-DTX@{OPUS\_\-SET\_\-DTX}}
+\index{OPUS\_\-SET\_\-DTX@{OPUS\_\-SET\_\-DTX}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-DTX}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-DTX(x)}}
+\label{group__opus__encoderctls_ga4f053b2db8c5162293213aabfe123773}
+
+
+Configures the encoder's use of discontinuous transmission (DTX). \begin{DoxyNote}{Note}
+This is only applicable to the LPC layer 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaafbb44454e9f57232b85e4e087337ded}{OPUS\_\-GET\_\-DTX} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[0]Disable DTX (default). 
+\item[1]Enabled DTX. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga8450a745bd919a8de522afec115f3b5f}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-FORCE\_\-CHANNELS@{OPUS\_\-SET\_\-FORCE\_\-CHANNELS}}
+\index{OPUS\_\-SET\_\-FORCE\_\-CHANNELS@{OPUS\_\-SET\_\-FORCE\_\-CHANNELS}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-FORCE\_\-CHANNELS}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-FORCE\_\-CHANNELS(x)}}
+\label{group__opus__encoderctls_ga8450a745bd919a8de522afec115f3b5f}
+
+
+Configures mono/stereo forcing in the encoder. This can force the encoder to produce packets encoded as either mono or stereo, regardless of the format of the input audio. This is useful when the caller knows that the input signal is currently a mono source embedded in a stereo stream. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga21f010167c5dfa1b53f20c46d473e86a}{OPUS\_\-GET\_\-FORCE\_\-CHANNELS} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO}]Not forced (default) 
+\item[1 ]Forced mono 
+\item[2 ]Forced stereo 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga5b67dc832aa46c1c2f35752c46380545}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-INBAND\_\-FEC@{OPUS\_\-SET\_\-INBAND\_\-FEC}}
+\index{OPUS\_\-SET\_\-INBAND\_\-FEC@{OPUS\_\-SET\_\-INBAND\_\-FEC}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-INBAND\_\-FEC}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-INBAND\_\-FEC(x)}}
+\label{group__opus__encoderctls_ga5b67dc832aa46c1c2f35752c46380545}
+
+
+Configures the encoder's use of inband forward error correction (FEC). \begin{DoxyNote}{Note}
+This is only applicable to the LPC layer 
+\end{DoxyNote}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaf792b27a6277ddf786413dbf472d0ac8}{OPUS\_\-GET\_\-INBAND\_\-FEC} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[0]Disable inband FEC (default). 
+\item[1]Enable inband FEC. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaa23940eb477ff617edc14b8d66e104c0}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-LSB\_\-DEPTH@{OPUS\_\-SET\_\-LSB\_\-DEPTH}}
+\index{OPUS\_\-SET\_\-LSB\_\-DEPTH@{OPUS\_\-SET\_\-LSB\_\-DEPTH}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-LSB\_\-DEPTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-LSB\_\-DEPTH(x)}}
+\label{group__opus__encoderctls_gaa23940eb477ff617edc14b8d66e104c0}
+
+
+Configures the depth of signal being encoded. This is a hint which helps the encoder identify silence and near-\/silence. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gab5ecdfbbbabfaefc2f2ca79cf4a3b08f}{OPUS\_\-GET\_\-LSB\_\-DEPTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Input precision in bits, between 8 and 24 (default: 24). \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga4f88288e89c595c07c61db316cc45289}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-MAX\_\-BANDWIDTH@{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH}}
+\index{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH@{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-MAX\_\-BANDWIDTH}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-MAX\_\-BANDWIDTH(x)}}
+\label{group__opus__encoderctls_ga4f88288e89c595c07c61db316cc45289}
+
+
+Configures the maximum bandpass that the encoder will select automatically. Applications should normally use this instead of \hyperlink{group__opus__encoderctls_ga0178dabe5526d5b0667d81489cc93791}{OPUS\_\-SET\_\-BANDWIDTH} (leaving that set to the default, \hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO}). This allows the application to set an upper bound based on the type of input it is providing, but still gives the encoder the freedom to reduce the bandpass when the bitrate becomes too low, for better overall quality. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaa3b5736de64792e1144ce12dfb87613c}{OPUS\_\-GET\_\-MAX\_\-BANDWIDTH} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[OPUS\_\-BANDWIDTH\_\-NARROWBAND ]4 kHz passband 
+\item[OPUS\_\-BANDWIDTH\_\-MEDIUMBAND ]6 kHz passband 
+\item[OPUS\_\-BANDWIDTH\_\-WIDEBAND ]8 kHz passband 
+\item[OPUS\_\-BANDWIDTH\_\-SUPERWIDEBAND]12 kHz passband 
+\item[OPUS\_\-BANDWIDTH\_\-FULLBAND ]20 kHz passband (default) 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gafda1c951dea919ba54432cd03827f1a9}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC@{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC}}
+\index{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC@{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-PACKET\_\-LOSS\_\-PERC(x)}}
+\label{group__opus__encoderctls_gafda1c951dea919ba54432cd03827f1a9}
+
+
+Configures the encoder's expected packet loss percentage. Higher values with trigger progressively more loss resistant behavior in the encoder at the expense of quality at a given bitrate in the lossless case, but greater quality under loss. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gaa79261c6a55444993fca8d3a3a29d519}{OPUS\_\-GET\_\-PACKET\_\-LOSS\_\-PERC} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Loss percentage in the range 0-\/100, inclusive (default: 0). \end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gaaa87ccee4ae46aa6c9528e03c5122b89}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-SIGNAL@{OPUS\_\-SET\_\-SIGNAL}}
+\index{OPUS\_\-SET\_\-SIGNAL@{OPUS\_\-SET\_\-SIGNAL}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-SIGNAL}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-SIGNAL(x)}}
+\label{group__opus__encoderctls_gaaa87ccee4ae46aa6c9528e03c5122b89}
+
+
+Configures the type of signal being encoded. This is a hint which helps the encoder's mode selection. \begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga640d434de535e2d2caec991c347303a4}{OPUS\_\-GET\_\-SIGNAL} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[\hyperlink{group__opus__ctlvalues_ga1c5b3244b018ff4548d2d6bffa418472}{OPUS\_\-AUTO} ](default) 
+\item[\hyperlink{group__opus__ctlvalues_ga085a116fed816373d3b9eae28df49404}{OPUS\_\-SIGNAL\_\-VOICE}]Bias thresholds towards choosing LPC or Hybrid modes. 
+\item[\hyperlink{group__opus__ctlvalues_gaa0c228c664b6d426f4c213e3a5350889}{OPUS\_\-SIGNAL\_\-MUSIC}]Bias thresholds towards choosing MDCT modes. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_ga34d09ae06cab7e1a6c49876249b67892}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-VBR@{OPUS\_\-SET\_\-VBR}}
+\index{OPUS\_\-SET\_\-VBR@{OPUS\_\-SET\_\-VBR}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-VBR}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-VBR(x)}}
+\label{group__opus__encoderctls_ga34d09ae06cab7e1a6c49876249b67892}
+
+
+Enables or disables variable bitrate (VBR) in the encoder. The configured bitrate may not be met exactly because frames must be an integer number of bytes in length. \begin{DoxyWarning}{Warning}
+Only the MDCT mode of Opus can provide hard CBR behavior. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_ga58feba30c167962305ec268e6abe8c08}{OPUS\_\-GET\_\-VBR} 
+
+\hyperlink{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[0]Hard CBR. For LPC/hybrid modes at very low bit-\/rate, this can cause noticeable quality degradation. 
+\item[1]VBR (default). The exact type of VBR is controlled by \hyperlink{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT}. 
+\end{DoxyDescription}\end{DoxyParams}
+\hypertarget{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}{
+\index{opus\_\-encoderctls@{opus\_\-encoderctls}!OPUS\_\-SET\_\-VBR\_\-CONSTRAINT@{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT}}
+\index{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT@{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT}!opus_encoderctls@{opus\_\-encoderctls}}
+\subsubsection[{OPUS\_\-SET\_\-VBR\_\-CONSTRAINT}]{\setlength{\rightskip}{0pt plus 5cm}\#define OPUS\_\-SET\_\-VBR\_\-CONSTRAINT(x)}}
+\label{group__opus__encoderctls_gab1b534a4fe55373f1be407ad4b2b22bd}
+
+
+Enables or disables constrained VBR in the encoder. This setting is ignored when the encoder is in CBR mode. \begin{DoxyWarning}{Warning}
+Only the MDCT mode of Opus currently heeds the constraint. Speech mode ignores it completely, hybrid mode may fail to obey it if the LPC layer uses more bitrate than the constraint would have permitted. 
+\end{DoxyWarning}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{group__opus__encoderctls_gab35fa5691ba0dd932031b7839c47513c}{OPUS\_\-GET\_\-VBR\_\-CONSTRAINT} 
+
+\hyperlink{group__opus__encoderctls_ga34d09ae06cab7e1a6c49876249b67892}{OPUS\_\-SET\_\-VBR} 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+\item[\mbox{$\leftarrow$} {\em x}]{\ttfamily opus\_\-int32}: Allowed values: 
+\begin{DoxyDescription}
+\item[0]Unconstrained VBR. 
+\item[1]Constrained VBR (default). This creates a maximum of one frame of buffering delay assuming a transport with a serialization speed of the nominal bitrate. 
+\end{DoxyDescription}\end{DoxyParams}

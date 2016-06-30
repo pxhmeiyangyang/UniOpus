@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "FD49214C758845ABA45EFE89B49325D5722AE52A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "FD49214C758845ABA45EFE89B49325D5722AE52A" : 0,
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "336EB204-6879-4DCB-B81C-A3760E949D9D",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "FD49214C758845ABA45EFE89B49325D5722AE52A" : "oraleval-sdk-manager",
+    "A8CDBA9513AA51CB342C8701BA42DD70C341880B" : ""
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "AsrOralFix",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "ios-sdk\/src\/AsrOralFix.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.5.70:UStudy-iOS-app.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A8CDBA9513AA51CB342C8701BA42DD70C341880B"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "192.168.5.80:oraleval-sdk-manager",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "FD49214C758845ABA45EFE89B49325D5722AE52A"
+    }
+  ]
+}
