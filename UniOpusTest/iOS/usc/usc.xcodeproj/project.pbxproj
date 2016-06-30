@@ -36,7 +36,7 @@
 		BDFEF0E61B4FA4D6008AFCC3 /* USCBaseRecognition.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDFEF0E11B4FA4D6008AFCC3 /* USCBaseRecognition.mm */; };
 		BDFEF0E81B4FA4D6008AFCC3 /* USCRecognitionManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BDFEF0E51B4FA4D6008AFCC3 /* USCRecognitionManager.mm */; };
 		F119BC6E1D22424300DA704D /* liboralEdu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F119BC6D1D22424300DA704D /* liboralEdu.a */; };
-		F1DB72431D24C366009B4169 /* libUniOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F1DB72421D24C366009B4169 /* libUniOpus.a */; };
+		F16BF7DE1D252ACE00FDCEB5 /* libUniOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F16BF7DD1D252ACE00FDCEB5 /* libUniOpus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -117,8 +117,8 @@
 		BDFEF0E41B4FA4D6008AFCC3 /* USCRecognitionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = USCRecognitionManager.h; path = Recognition/USCRecognitionManager.h; sourceTree = "<group>"; };
 		BDFEF0E51B4FA4D6008AFCC3 /* USCRecognitionManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = USCRecognitionManager.mm; path = Recognition/USCRecognitionManager.mm; sourceTree = "<group>"; };
 		F119BC6D1D22424300DA704D /* liboralEdu.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = liboralEdu.a; sourceTree = "<group>"; };
-		F1DB72411D24C353009B4169 /* UniOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniOpus.h; sourceTree = "<group>"; };
-		F1DB72421D24C366009B4169 /* libUniOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libUniOpus.a; sourceTree = "<group>"; };
+		F16BF7DD1D252ACE00FDCEB5 /* libUniOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libUniOpus.a; path = ../../../../libUniOpus.a; sourceTree = "<group>"; };
+		F16BF7DF1D252AE900FDCEB5 /* UniOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UniOpus.h; path = ../../../../UniOpus/UniOpus/UniOpus.h; sourceTree = "<group>"; };
 		F1F838F51D20CF9E00FE24BB /* tmp_oral_offline.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = tmp_oral_offline.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,7 +128,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F119BC6E1D22424300DA704D /* liboralEdu.a in Frameworks */,
-				F1DB72431D24C366009B4169 /* libUniOpus.a in Frameworks */,
+				F16BF7DE1D252ACE00FDCEB5 /* libUniOpus.a in Frameworks */,
 				BD61CFEE1B1EC95400F046B6 /* libmp3lame.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -187,8 +187,8 @@
 		BD10E88B1BD9BA2800DCF448 /* OpusEncode */ = {
 			isa = PBXGroup;
 			children = (
-				F1DB72411D24C353009B4169 /* UniOpus.h */,
-				F1DB72421D24C366009B4169 /* libUniOpus.a */,
+				F16BF7DF1D252AE900FDCEB5 /* UniOpus.h */,
+				F16BF7DD1D252ACE00FDCEB5 /* libUniOpus.a */,
 			);
 			path = OpusEncode;
 			sourceTree = "<group>";

@@ -8,6 +8,6 @@
       location = "group:iOS/usc/usc.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:UniOpus/UniOpus.xcodeproj">
+      location = "group:iOS/UniOpus/UniOpus.xcodeproj">
    </FileRef>
 </Workspace>
