@@ -7,6 +7,19 @@
 //
 
 #import "UniOpus.h"
+#include "opus.h"
+
+@interface UniOpus()
+{
+    NSMutableArray *audioDataAry;
+    dispatch_queue_t encodeQue;
+    BOOL isCanceled;
+    BOOL isStoped;
+    BOOL finishCallBack;
+    NSInteger encodeNum;
+    OpusEncoder *enc;
+}
+@end
 
 @implementation UniOpus
 -(id)init

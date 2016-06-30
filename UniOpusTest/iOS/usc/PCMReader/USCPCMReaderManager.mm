@@ -299,7 +299,7 @@
 
 - (void) onReadPCMUpdateVolume:(int)volume
 {
-    //USCLog(@"Reader -> reading | onReadPCMUpdateVolume : %d",volume);
+    USCLog(@"Reader -> reading | onReadPCMUpdateVolume : %d",volume);
     [self volumeUpdate:volume];
 }
 
@@ -321,7 +321,7 @@
 
 - (void) onReadPCMData:(NSData *)data
 {
-    //USCLog(@"Reader -> reading | onReadPCMData");
+    USCLog(@"Reader -> reading | onReadPCMData");
     [self getRecordingBuffer:data];
 }
 

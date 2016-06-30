@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#include "opus.h"
+
 
 @protocol UniOpusDelegate <NSObject>
 
@@ -17,16 +17,6 @@
 @end
 
 @interface UniOpus : NSObject
-
-{
-    NSMutableArray *audioDataAry;
-    dispatch_queue_t encodeQue;
-    BOOL isCanceled;
-    BOOL isStoped;
-    BOOL finishCallBack;
-    NSInteger encodeNum;
-    OpusEncoder *enc;
-}
 
 @property (nonatomic,assign)id <UniOpusDelegate>delegate;
 
