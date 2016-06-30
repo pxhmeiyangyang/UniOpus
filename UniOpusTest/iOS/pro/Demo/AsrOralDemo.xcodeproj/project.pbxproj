@@ -267,9 +267,9 @@
 		BDAEF8201A5E2B9F00DE1109 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				BDC7DFAF1B4E247300B48498 /* USCRecognizer.h */,
 				F1F838F61D20CFF800FE24BB /* tmp_oral_offline.bundle */,
 				BD49D6041B71B78B0066F4D8 /* libusc.a */,
-				BDC7DFAF1B4E247300B48498 /* USCRecognizer.h */,
 			);
 			name = libs;
 			sourceTree = "<group>";
@@ -551,7 +551,7 @@
 				INFOPLIST_FILE = AsrOralDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/pxh/Documents/company/unisundsdk/unisoundSDK/ios-sdk/src/iOS";
+				LIBRARY_SEARCH_PATHS = /Users/pxh/Documents/company/UniOpus/UniOpusTest/iOS;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yunzhisheng.AsrOralDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -579,7 +579,7 @@
 				INFOPLIST_FILE = AsrOralDemo/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = "/Users/pxh/Documents/company/unisundsdk/unisoundSDK/ios-sdk/src/iOS";
+				LIBRARY_SEARCH_PATHS = /Users/pxh/Documents/company/UniOpus/UniOpusTest/iOS;
 				OTHER_LDFLAGS = "";
 				PRODUCT_BUNDLE_IDENTIFIER = cn.yunzhisheng.AsrOralDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
