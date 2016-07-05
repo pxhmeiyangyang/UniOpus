@@ -360,6 +360,7 @@
 		F101D3031D23669F00DEA5F9 /* opus_private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = opus_private.h; sourceTree = "<group>"; };
 		F101D3041D23669F00DEA5F9 /* repacketizer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = repacketizer.c; sourceTree = "<group>"; };
 		F101D3051D23669F00DEA5F9 /* repacketizer_demo.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = repacketizer_demo.c; sourceTree = "<group>"; };
+		F1E4FCC11D2B5B820061DD2C /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -395,6 +396,7 @@
 				F101D1571D23669E00DEA5F9 /* libopus */,
 				F101D14E1D23668700DEA5F9 /* UniOpus.h */,
 				F101D1501D23668700DEA5F9 /* UniOpus.mm */,
+				F1E4FCC11D2B5B820061DD2C /* Config.h */,
 			);
 			path = UniOpus;
 			sourceTree = "<group>";
@@ -1037,6 +1039,7 @@
 				F101D1561D23668700DEA5F9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
