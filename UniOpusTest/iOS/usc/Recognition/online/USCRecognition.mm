@@ -79,7 +79,7 @@ static  NSMutableData *startData = [NSMutableData dataWithCapacity:1];
     
     USCLog(@"Recognition -> setGetResultTimeout : %d",timeout);
 }
-
+//在调用startOpus之后，调用该函数进行编码
 - (void)appendAudioData:(NSData *)audioData
 {
     [uniOpus appendAudioData:audioData];
@@ -305,8 +305,8 @@ static  NSMutableData *startData = [NSMutableData dataWithCapacity:1];
     }
 }
 
-#pragma mark -
-#pragma mark UniOpus
+
+#pragma mark - UniOpus
 
 -(void)startOpus
 {
@@ -335,7 +335,7 @@ static  NSMutableData *startData = [NSMutableData dataWithCapacity:1];
     }
 }
 
-#pragma mark UniOpusDelegate
+#pragma mark - UniOpusDelegate
 
 -(void)opusDataDidEncode:(NSData *)encodeData
 {
