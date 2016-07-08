@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol UniOpusDelegate <NSObject>
+@protocol UnisoundOpusDelegate <NSObject>
 
 /**
  *  opus编码完成后编码数据回调
@@ -25,9 +25,9 @@
 
 @end
 
-@interface UniOpus : NSObject
+@interface UnisoundOpus : NSObject
 
-@property (nonatomic,assign)id <UniOpusDelegate>delegate;
+@property (nonatomic,assign)id <UnisoundOpusDelegate>delegate;
 
 /**
  *  opus编码函数

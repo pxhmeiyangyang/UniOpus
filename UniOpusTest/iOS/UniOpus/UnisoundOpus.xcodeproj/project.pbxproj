@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F101D14F1D23668700DEA5F9 /* UniOpus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F101D14E1D23668700DEA5F9 /* UniOpus.h */; };
-		F101D1511D23668700DEA5F9 /* UniOpus.mm in Sources */ = {isa = PBXBuildFile; fileRef = F101D1501D23668700DEA5F9 /* UniOpus.mm */; };
+		F101D14F1D23668700DEA5F9 /* UnisoundOpus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F101D14E1D23668700DEA5F9 /* UnisoundOpus.h */; };
+		F101D1511D23668700DEA5F9 /* UnisoundOpus.mm in Sources */ = {isa = PBXBuildFile; fileRef = F101D1501D23668700DEA5F9 /* UnisoundOpus.mm */; };
 		F101D3241D23669F00DEA5F9 /* bands.c in Sources */ = {isa = PBXBuildFile; fileRef = F101D1681D23669E00DEA5F9 /* bands.c */; };
 		F101D3251D23669F00DEA5F9 /* celt.c in Sources */ = {isa = PBXBuildFile; fileRef = F101D16A1D23669E00DEA5F9 /* celt.c */; };
 		F101D3261D23669F00DEA5F9 /* celt_lpc.c in Sources */ = {isa = PBXBuildFile; fileRef = F101D16E1D23669E00DEA5F9 /* celt_lpc.c */; };
@@ -145,16 +145,16 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				F101D14F1D23668700DEA5F9 /* UniOpus.h in CopyFiles */,
+				F101D14F1D23668700DEA5F9 /* UnisoundOpus.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F101D14B1D23668700DEA5F9 /* libUniOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUniOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		F101D14E1D23668700DEA5F9 /* UniOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UniOpus.h; sourceTree = "<group>"; };
-		F101D1501D23668700DEA5F9 /* UniOpus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UniOpus.mm; sourceTree = "<group>"; };
+		F101D14B1D23668700DEA5F9 /* libUnisoundOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libUnisoundOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F101D14E1D23668700DEA5F9 /* UnisoundOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UnisoundOpus.h; sourceTree = "<group>"; };
+		F101D1501D23668700DEA5F9 /* UnisoundOpus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = UnisoundOpus.mm; sourceTree = "<group>"; };
 		F101D1631D23669E00DEA5F9 /* .dirstamp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dirstamp; sourceTree = "<group>"; };
 		F101D1641D23669E00DEA5F9 /* opus_custom_demo.Po */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = opus_custom_demo.Po; sourceTree = "<group>"; };
 		F101D1651D23669E00DEA5F9 /* .dirstamp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .dirstamp; sourceTree = "<group>"; };
@@ -385,7 +385,7 @@
 		F101D14C1D23668700DEA5F9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F101D14B1D23668700DEA5F9 /* libUniOpus.a */,
+				F101D14B1D23668700DEA5F9 /* libUnisoundOpus.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -394,8 +394,8 @@
 			isa = PBXGroup;
 			children = (
 				F101D1571D23669E00DEA5F9 /* libopus */,
-				F101D14E1D23668700DEA5F9 /* UniOpus.h */,
-				F101D1501D23668700DEA5F9 /* UniOpus.mm */,
+				F101D14E1D23668700DEA5F9 /* UnisoundOpus.h */,
+				F101D1501D23668700DEA5F9 /* UnisoundOpus.mm */,
 				F1E4FCC11D2B5B820061DD2C /* Config.h */,
 			);
 			path = UniOpus;
@@ -688,9 +688,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F101D14A1D23668700DEA5F9 /* UniOpus */ = {
+		F101D14A1D23668700DEA5F9 /* UnisoundOpus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F101D1541D23668700DEA5F9 /* Build configuration list for PBXNativeTarget "UniOpus" */;
+			buildConfigurationList = F101D1541D23668700DEA5F9 /* Build configuration list for PBXNativeTarget "UnisoundOpus" */;
 			buildPhases = (
 				F101D1471D23668700DEA5F9 /* Sources */,
 				F101D1481D23668700DEA5F9 /* Frameworks */,
@@ -700,9 +700,9 @@
 			);
 			dependencies = (
 			);
-			name = UniOpus;
+			name = UnisoundOpus;
 			productName = UniOpus;
-			productReference = F101D14B1D23668700DEA5F9 /* libUniOpus.a */;
+			productReference = F101D14B1D23668700DEA5F9 /* libUnisoundOpus.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -719,7 +719,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F101D1461D23668700DEA5F9 /* Build configuration list for PBXProject "UniOpus" */;
+			buildConfigurationList = F101D1461D23668700DEA5F9 /* Build configuration list for PBXProject "UnisoundOpus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -731,7 +731,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F101D14A1D23668700DEA5F9 /* UniOpus */,
+				F101D14A1D23668700DEA5F9 /* UnisoundOpus */,
 			);
 		};
 /* End PBXProject section */
@@ -822,7 +822,7 @@
 				F101D3401D23669F00DEA5F9 /* A2NLSF.c in Sources */,
 				F101D3931D23669F00DEA5F9 /* inner_prod_aligned.c in Sources */,
 				F101D3451D23669F00DEA5F9 /* check_control_input.c in Sources */,
-				F101D1511D23668700DEA5F9 /* UniOpus.mm in Sources */,
+				F101D1511D23668700DEA5F9 /* UnisoundOpus.mm in Sources */,
 				F101D3B81D23669F00DEA5F9 /* stereo_quant_pred.c in Sources */,
 				F101D36A1D23669F00DEA5F9 /* residual_energy_FIX.c in Sources */,
 				F101D32D1D23669F00DEA5F9 /* mathops.c in Sources */,
@@ -982,7 +982,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnisoundOpus;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "UniOpus/libopus UniOpus/libopus/celt UniOpus/libopus/silk UniOpus/liopus/silk/fixed UniOpus/libopus/include";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -1013,7 +1013,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = UnisoundOpus;
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "UniOpus/libopus UniOpus/libopus/celt UniOpus/libopus/silk UniOpus/liopus/silk/fixed UniOpus/libopus/include";
 				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
@@ -1023,7 +1023,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F101D1461D23668700DEA5F9 /* Build configuration list for PBXProject "UniOpus" */ = {
+		F101D1461D23668700DEA5F9 /* Build configuration list for PBXProject "UnisoundOpus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F101D1521D23668700DEA5F9 /* Debug */,
@@ -1032,7 +1032,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F101D1541D23668700DEA5F9 /* Build configuration list for PBXNativeTarget "UniOpus" */ = {
+		F101D1541D23668700DEA5F9 /* Build configuration list for PBXNativeTarget "UnisoundOpus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F101D1551D23668700DEA5F9 /* Debug */,

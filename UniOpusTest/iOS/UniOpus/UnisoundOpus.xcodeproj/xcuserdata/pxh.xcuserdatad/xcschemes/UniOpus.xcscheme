@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F101D14A1D23668700DEA5F9"
-               BuildableName = "libUniOpus.a"
-               BlueprintName = "UniOpus"
-               ReferencedContainer = "container:UniOpus.xcodeproj">
+               BuildableName = "libUnisoundOpus.a"
+               BlueprintName = "UnisoundOpus"
+               ReferencedContainer = "container:UnisoundOpus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F101D14A1D23668700DEA5F9"
-            BuildableName = "libUniOpus.a"
-            BlueprintName = "UniOpus"
-            ReferencedContainer = "container:UniOpus.xcodeproj">
+            BuildableName = "libUnisoundOpus.a"
+            BlueprintName = "UnisoundOpus"
+            ReferencedContainer = "container:UnisoundOpus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F101D14A1D23668700DEA5F9"
-            BuildableName = "libUniOpus.a"
-            BlueprintName = "UniOpus"
-            ReferencedContainer = "container:UniOpus.xcodeproj">
+            BuildableName = "libUnisoundOpus.a"
+            BlueprintName = "UnisoundOpus"
+            ReferencedContainer = "container:UnisoundOpus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

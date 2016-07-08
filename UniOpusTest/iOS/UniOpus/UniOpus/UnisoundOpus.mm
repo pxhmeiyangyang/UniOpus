@@ -6,10 +6,10 @@
 //  Copyright © 2016年 裴新华. All rights reserved.
 //
 
-#import "UniOpus.h"
+#import "UnisoundOpus.h"
 #include "opus.h"
 
-@interface UniOpus()
+@interface UnisoundOpus()
 {
     NSMutableArray *audioDataAry;
     dispatch_queue_t encodeQue;
@@ -21,7 +21,7 @@
 }
 @end
 
-@implementation UniOpus
+@implementation UnisoundOpus
 -(id)init
 {
     if (self = [super init])
