@@ -315,7 +315,7 @@ static  NSMutableData *startData = [NSMutableData dataWithCapacity:1];
     {
         uniOpus = nil;
     }
-    uniOpus = [[UniOpus alloc]init];
+    uniOpus = [[UnisoundOpus alloc]init];
     uniOpus.delegate = self;
 }
 

@@ -14,7 +14,7 @@
 #import "USCHTTPRecognition.h"
 #import "USCErrorCode.h"
 #import "USCAsyncSocket.h"
-#import "UniOpus.h"
+#import "UnisoundOpus.h"
 
 #import "USCPreference.h"
 
@@ -31,12 +31,12 @@
 
 @end
 
-@interface USCRecognition : USCBaseRecognition<UniSocketDelegate, HTTPRecognitionDelegate, UniOpusDelegate>
+@interface USCRecognition : USCBaseRecognition<UniSocketDelegate, HTTPRecognitionDelegate, UnisoundOpusDelegate>
 {
     NSMutableData *httpData;
     USCAsyncSocket *mSocket;
     USCPreference *preference;
-    UniOpus *uniOpus;
+    UnisoundOpus *uniOpus;
     
     USCHTTPRecognition *httpRecog;
     UniSocketRecognition *socketRecognition;
