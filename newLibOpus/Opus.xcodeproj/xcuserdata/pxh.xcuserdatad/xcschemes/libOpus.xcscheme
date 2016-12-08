@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "F151BBF41DF9483A00D5E00F"
-               BuildableName = "liblibOpus.a"
-               BlueprintName = "libOpus"
-               ReferencedContainer = "container:libOpus.xcodeproj">
+               BuildableName = "libOpus.a"
+               BlueprintName = "Opus"
+               ReferencedContainer = "container:Opus.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,9 +46,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F151BBF41DF9483A00D5E00F"
-            BuildableName = "liblibOpus.a"
-            BlueprintName = "libOpus"
-            ReferencedContainer = "container:libOpus.xcodeproj">
+            BuildableName = "libOpus.a"
+            BlueprintName = "Opus"
+            ReferencedContainer = "container:Opus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -64,9 +64,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "F151BBF41DF9483A00D5E00F"
-            BuildableName = "liblibOpus.a"
-            BlueprintName = "libOpus"
-            ReferencedContainer = "container:libOpus.xcodeproj">
+            BuildableName = "libOpus.a"
+            BlueprintName = "Opus"
+            ReferencedContainer = "container:Opus.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

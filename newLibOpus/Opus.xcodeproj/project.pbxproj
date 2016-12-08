@@ -158,7 +158,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F151BBF51DF9483A00D5E00F /* liblibOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = liblibOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		F151BBF51DF9483A00D5E00F /* libOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F151BBF81DF9483A00D5E00F /* libOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOpus.h; sourceTree = "<group>"; };
 		F151BBF91DF9483A00D5E00F /* libOpus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOpus.m; sourceTree = "<group>"; };
 		F1ABF1391DF970D100E09FB8 /* analysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = analysis.c; sourceTree = "<group>"; };
@@ -376,7 +376,7 @@
 		F151BBF61DF9483A00D5E00F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F151BBF51DF9483A00D5E00F /* liblibOpus.a */,
+				F151BBF51DF9483A00D5E00F /* libOpus.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -625,9 +625,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F151BBF41DF9483A00D5E00F /* libOpus */ = {
+		F151BBF41DF9483A00D5E00F /* Opus */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F151BBFE1DF9483A00D5E00F /* Build configuration list for PBXNativeTarget "libOpus" */;
+			buildConfigurationList = F151BBFE1DF9483A00D5E00F /* Build configuration list for PBXNativeTarget "Opus" */;
 			buildPhases = (
 				F151BBF11DF9483A00D5E00F /* Sources */,
 				F151BBF21DF9483A00D5E00F /* Frameworks */,
@@ -637,9 +637,9 @@
 			);
 			dependencies = (
 			);
-			name = libOpus;
+			name = Opus;
 			productName = libOpus;
-			productReference = F151BBF51DF9483A00D5E00F /* liblibOpus.a */;
+			productReference = F151BBF51DF9483A00D5E00F /* libOpus.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
@@ -657,7 +657,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F151BBF01DF9483A00D5E00F /* Build configuration list for PBXProject "libOpus" */;
+			buildConfigurationList = F151BBF01DF9483A00D5E00F /* Build configuration list for PBXProject "Opus" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -669,7 +669,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F151BBF41DF9483A00D5E00F /* libOpus */,
+				F151BBF41DF9483A00D5E00F /* Opus */,
 			);
 		};
 /* End PBXProject section */
@@ -911,6 +911,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"DEBUG=1",
@@ -936,6 +937,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CONFIGURATION_BUILD_DIR = "$(SRCROOT)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					FIXED_POINT,
@@ -958,7 +960,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F151BBF01DF9483A00D5E00F /* Build configuration list for PBXProject "libOpus" */ = {
+		F151BBF01DF9483A00D5E00F /* Build configuration list for PBXProject "Opus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F151BBFC1DF9483A00D5E00F /* Debug */,
@@ -967,7 +969,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F151BBFE1DF9483A00D5E00F /* Build configuration list for PBXNativeTarget "libOpus" */ = {
+		F151BBFE1DF9483A00D5E00F /* Build configuration list for PBXNativeTarget "Opus" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F151BBFF1DF9483A00D5E00F /* Debug */,
