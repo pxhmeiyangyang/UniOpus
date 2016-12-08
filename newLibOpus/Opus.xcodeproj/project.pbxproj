@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F151BBFA1DF9483A00D5E00F /* libOpus.m in Sources */ = {isa = PBXBuildFile; fileRef = F151BBF91DF9483A00D5E00F /* libOpus.m */; };
+		F151BBFA1DF9483A00D5E00F /* libOpus.mm in Sources */ = {isa = PBXBuildFile; fileRef = F151BBF91DF9483A00D5E00F /* libOpus.mm */; };
 		F151BBFB1DF9483A00D5E00F /* libOpus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F151BBF81DF9483A00D5E00F /* libOpus.h */; };
 		F1ABF14A1DF970D100E09FB8 /* analysis.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF1391DF970D100E09FB8 /* analysis.c */; };
 		F1ABF14B1DF970D100E09FB8 /* mlp_data.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF13B1DF970D100E09FB8 /* mlp_data.c */; };
@@ -160,7 +160,7 @@
 /* Begin PBXFileReference section */
 		F151BBF51DF9483A00D5E00F /* libOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F151BBF81DF9483A00D5E00F /* libOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOpus.h; sourceTree = "<group>"; };
-		F151BBF91DF9483A00D5E00F /* libOpus.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = libOpus.m; sourceTree = "<group>"; };
+		F151BBF91DF9483A00D5E00F /* libOpus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = libOpus.mm; sourceTree = "<group>"; };
 		F1ABF1391DF970D100E09FB8 /* analysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = analysis.c; sourceTree = "<group>"; };
 		F1ABF13A1DF970D100E09FB8 /* analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
 		F1ABF13B1DF970D100E09FB8 /* mlp_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mlp_data.c; sourceTree = "<group>"; };
@@ -388,7 +388,7 @@
 				F1ABF1571DF970E400E09FB8 /* celt */,
 				F1ABF0FC1DF96FFD00E09FB8 /* src */,
 				F151BBF81DF9483A00D5E00F /* libOpus.h */,
-				F151BBF91DF9483A00D5E00F /* libOpus.m */,
+				F151BBF91DF9483A00D5E00F /* libOpus.mm */,
 			);
 			path = libOpus;
 			sourceTree = "<group>";
@@ -686,7 +686,7 @@
 				F1ABF2A31DF9710C00E09FB8 /* check_control_input.c in Sources */,
 				F1ABF1CE1DF970E400E09FB8 /* rate.c in Sources */,
 				F1ABF31B1DF9710C00E09FB8 /* table_LSF_cos.c in Sources */,
-				F151BBFA1DF9483A00D5E00F /* libOpus.m in Sources */,
+				F151BBFA1DF9483A00D5E00F /* libOpus.mm in Sources */,
 				F1ABF2AE1DF9710C00E09FB8 /* decode_parameters.c in Sources */,
 				F1ABF2C91DF9710C00E09FB8 /* schur64_FIX.c in Sources */,
 				F1ABF2BB1DF9710C00E09FB8 /* find_LTP_FIX.c in Sources */,
