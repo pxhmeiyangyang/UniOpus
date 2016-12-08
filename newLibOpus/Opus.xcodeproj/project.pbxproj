@@ -930,6 +930,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "libOpus/libOpus libOpus/libOpus/celt libOpus/libOpus/include libOpus/libOpus/silk libOpus/libOpus/src";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Debug;
 		};
@@ -954,6 +955,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				USER_HEADER_SEARCH_PATHS = "libOpus/libOpus libOpus/libOpus/celt libOpus/libOpus/include libOpus/libOpus/silk libOpus/libOpus/src";
+				VALID_ARCHS = "arm64 armv7 armv7s i386 x86_64";
 			};
 			name = Release;
 		};
