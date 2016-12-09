@@ -19,10 +19,17 @@
     // Do any additional setup after loading the view, typically from a nib.
     _opus = [[libOpus alloc]init];
     _opus.delegate = self;
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"pcm"];
+    BOOL isEncode = false;
+    NSString* type = @"pcm";
+    if (isEncode) {
+        type = @"pcm";
+    }else{
+        type = @"opus";
+    }
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:type];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     NSLog(@"%lu",(unsigned long)data.length);
-    [_opus appendAudioData:data isEncode:true];
+    [_opus appendAudioData:data isEncode:isEncode];
 }
 
 
