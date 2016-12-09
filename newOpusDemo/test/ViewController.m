@@ -18,6 +18,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     _opus = [[libOpus alloc]init];
+    _opus.delegate = self;
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"pcm"];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     NSLog(@"%lu",(unsigned long)data.length);
@@ -25,12 +26,15 @@
 }
 
 
-//-(void)opusDataDidEncode:(NSData *)encodeData;
+-(void)opusDataDidEncode:(NSData *)encodeData{
+}
 
 /**
  *  编码完成回调
  */
-//-(void)opusDataDidFinished;
+-(void)opusDataDidFinished{
+    NSLog(@"======编码完成了");
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

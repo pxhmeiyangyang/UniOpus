@@ -118,8 +118,10 @@
 //        opus_int32 length = opus_encode(enc, pcm, frame_size, outData + sizeof(short), frame_size * 2);
 //        outData[0] = length & 0xFF;
 //        outData[1] = (length & 0xFF00) >> 8;
-        NSLog(@"%d",ret);
+    
         NSData *data = [[NSData alloc]initWithBytes:outData length:length + sizeof(short)];
+    
+        NSLog(@"%d",data.length);
         
         [encodeData appendData:data];
         
