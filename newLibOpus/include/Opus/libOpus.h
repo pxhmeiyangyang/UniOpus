@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+
 @protocol OpusDelegate <NSObject>
 
 /**
@@ -24,7 +25,9 @@
 
 @end
 
+
 @interface libOpus : NSObject
+
 
 @property (nonatomic,assign)id <OpusDelegate>delegate;
 
@@ -44,5 +47,6 @@
  *  退出编码
  */
 -(void)cancelEncode;
+
 
 @end

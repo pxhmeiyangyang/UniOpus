@@ -7,7 +7,9 @@
 //
 
 #import "libOpus.h"
-#include "opus.h"
+#include "uni_opus_decoder.h"
+
+#define DEFAULT_LEN 640
 
 @interface libOpus()
 {
@@ -21,57 +23,57 @@
 }
 @end
 
-
 @implementation libOpus
--(id)init
-{
-    if (self = [super init])
-    {
-        [self opusCreat];
-        
-        encodeQue = dispatch_queue_create("cn.unisound.encode", nil);
-        
-        audioDataAry = [[NSMutableArray alloc]init];
-        isStoped = NO;
-        isCanceled = NO;
-        finishCallBack = NO;
-        
-        encodeNum = 0;
-    }
-    return self;
-}
 
--(void)opusCreat
-{
-    if (enc == NULL)
-    {
-        int err = 0;
-        opus_int32 skip = 0;
-        
-        int sample_rate = 16000;
-        enc = opus_encoder_create(sample_rate, 1, OPUS_APPLICATION_VOIP, &err);
-        opus_encoder_ctl(enc, OPUS_RESET_STATE);
-        opus_encoder_ctl(enc, OPUS_SET_BANDWIDTH(OPUS_BANDWIDTH_WIDEBAND));
-        opus_encoder_ctl(enc, OPUS_SET_BITRATE(sample_rate));
-        opus_encoder_ctl(enc, OPUS_SET_VBR(1));
-        opus_encoder_ctl(enc, OPUS_SET_COMPLEXITY(10));
-        opus_encoder_ctl(enc, OPUS_SET_INBAND_FEC(0));
-        opus_encoder_ctl(enc, OPUS_SET_FORCE_CHANNELS(OPUS_AUTO));
-        opus_encoder_ctl(enc, OPUS_SET_DTX(0));
-        opus_encoder_ctl(enc, OPUS_SET_PACKET_LOSS_PERC(0));
-        opus_encoder_ctl(enc, OPUS_GET_LOOKAHEAD(&skip));
-        opus_encoder_ctl(enc, OPUS_SET_LSB_DEPTH(16));
-    }
-}
+//-(id)init
+//{
+//    if (self = [super init])
+//    {
+//        [self opusCreat];
+//        
+//        encodeQue = dispatch_queue_create("cn.unisound.encode", nil);
+//        
+//        audioDataAry = [[NSMutableArray alloc]init];
+//        isStoped = NO;
+//        isCanceled = NO;
+//        finishCallBack = NO;
+//        
+//        encodeNum = 0;
+//    }
+//    return self;
+//}
 
--(void)opusDestroy
-{
-    if (enc)
-    {
-        opus_encoder_destroy(enc);
-        enc = nil;
-    }
-}
+//-(void)opusCreat
+//{
+//    if (enc == NULL)
+//    {
+//        int err = 0;
+//        opus_int32 skip = 0;
+//        
+//        int sample_rate = 16000;
+//        enc = opus_encoder_create(sample_rate, 1, OPUS_APPLICATION_VOIP, &err);
+//        opus_encoder_ctl(enc, OPUS_RESET_STATE);
+//        opus_encoder_ctl(enc, OPUS_SET_BANDWIDTH(OPUS_BANDWIDTH_WIDEBAND));
+//        opus_encoder_ctl(enc, OPUS_SET_BITRATE(sample_rate));
+//        opus_encoder_ctl(enc, OPUS_SET_VBR(1));
+//        opus_encoder_ctl(enc, OPUS_SET_COMPLEXITY(10));
+//        opus_encoder_ctl(enc, OPUS_SET_INBAND_FEC(0));
+//        opus_encoder_ctl(enc, OPUS_SET_FORCE_CHANNELS(OPUS_AUTO));
+//        opus_encoder_ctl(enc, OPUS_SET_DTX(0));
+//        opus_encoder_ctl(enc, OPUS_SET_PACKET_LOSS_PERC(0));
+//        opus_encoder_ctl(enc, OPUS_GET_LOOKAHEAD(&skip));
+//        opus_encoder_ctl(enc, OPUS_SET_LSB_DEPTH(16));
+//    }
+//}
+
+//-(void)opusDestroy
+//{
+//    if (enc)
+//    {
+//        opus_encoder_destroy(enc);
+//        enc = nil;
+//    }
+//}
 
 -(NSData *)encodeInFrame:(NSData *)pcmData
 {
@@ -79,6 +81,9 @@
     
     int frame_size = 320;
     NSRange range = NSMakeRange(0, 0);
+    
+    Opus* opus = new Opus(Opus::WB_MODE, true);
+    
     while (range.location < pcmData.length)
     {
         NSMutableData *blockData = [NSMutableData data];
@@ -102,14 +107,18 @@
                 [blockData appendBytes:(void *)&i length:sizeof(short)];
             }
         }
+//        opus_int16 *pcm = (opus_int16 *)blockData.bytes;
+        char* pcm = (char* )[blockData bytes];
+//        unsigned char outData[(frame_size + 1) * 2];
+        char* outData = NULL;
+//        opus_int32 length = 0;
+        unsigned int length;
+        int ret = opus->encode(pcm, frame_size * 2, &outData, &length);
         
-        opus_int16 *pcm = (opus_int16 *)blockData.bytes;
-        unsigned char outData[(frame_size + 1) * 2];
-        
-        opus_int32 length = opus_encode(enc, pcm, frame_size, outData + sizeof(short), frame_size * 2);
-        outData[0] = length & 0xFF;
-        outData[1] = (length & 0xFF00) >> 8;
-        
+//        opus_int32 length = opus_encode(enc, pcm, frame_size, outData + sizeof(short), frame_size * 2);
+//        outData[0] = length & 0xFF;
+//        outData[1] = (length & 0xFF00) >> 8;
+        NSLog(@"%d",ret);
         NSData *data = [[NSData alloc]initWithBytes:outData length:length + sizeof(short)];
         
         [encodeData appendData:data];
@@ -225,9 +234,10 @@
     
     isCanceled = NO;
     
-    [self opusDestroy];
+//    [self opusDestroy];
     
     encodeQue = nil;
 }
+
 
 @end

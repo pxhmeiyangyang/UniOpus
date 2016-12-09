@@ -11,7 +11,7 @@
 		F151BBFB1DF9483A00D5E00F /* libOpus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F151BBF81DF9483A00D5E00F /* libOpus.h */; };
 		F166A12A1DFA5695002A8C55 /* cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A1251DFA5694002A8C55 /* cache.cpp */; };
 		F166A12B1DFA5695002A8C55 /* uni_opus_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A1281DFA5694002A8C55 /* uni_opus_decoder.cpp */; };
-		F166A12D1DFA56B4002A8C55 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A12C1DFA56B4002A8C55 /* demo.cpp */; };
+		F166A12F1DFA6017002A8C55 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A12E1DFA6017002A8C55 /* demo.cpp */; };
 		F1ABF14A1DF970D100E09FB8 /* analysis.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF1391DF970D100E09FB8 /* analysis.c */; };
 		F1ABF14B1DF970D100E09FB8 /* mlp_data.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF13B1DF970D100E09FB8 /* mlp_data.c */; };
 		F1ABF14C1DF970D100E09FB8 /* mlp.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF13C1DF970D100E09FB8 /* mlp.c */; };
@@ -169,7 +169,7 @@
 		F166A1271DFA5694002A8C55 /* Compresser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compresser.h; sourceTree = "<group>"; };
 		F166A1281DFA5694002A8C55 /* uni_opus_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uni_opus_decoder.cpp; sourceTree = "<group>"; };
 		F166A1291DFA5694002A8C55 /* uni_opus_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uni_opus_decoder.h; sourceTree = "<group>"; };
-		F166A12C1DFA56B4002A8C55 /* demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
+		F166A12E1DFA6017002A8C55 /* demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 		F1ABF1391DF970D100E09FB8 /* analysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = analysis.c; sourceTree = "<group>"; };
 		F1ABF13A1DF970D100E09FB8 /* analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
 		F1ABF13B1DF970D100E09FB8 /* mlp_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mlp_data.c; sourceTree = "<group>"; };
@@ -376,6 +376,7 @@
 		F151BBEC1DF9483A00D5E00F = {
 			isa = PBXGroup;
 			children = (
+				F166A12E1DFA6017002A8C55 /* demo.cpp */,
 				F151BBF71DF9483A00D5E00F /* libOpus */,
 				F151BBF61DF9483A00D5E00F /* Products */,
 				F151C0491DF94F2E00D5E00F /* Frameworks */,
@@ -393,7 +394,6 @@
 		F151BBF71DF9483A00D5E00F /* libOpus */ = {
 			isa = PBXGroup;
 			children = (
-				F166A12C1DFA56B4002A8C55 /* demo.cpp */,
 				F166A1251DFA5694002A8C55 /* cache.cpp */,
 				F166A1261DFA5694002A8C55 /* cache.h */,
 				F166A1271DFA5694002A8C55 /* Compresser.h */,
@@ -794,7 +794,7 @@
 				F1ABF3181DF9710C00E09FB8 /* stereo_MS_to_LR.c in Sources */,
 				F1ABF2F91DF9710C00E09FB8 /* LPC_analysis_filter.c in Sources */,
 				F1ABF2AA1DF9710C00E09FB8 /* dec_API.c in Sources */,
-				F166A12D1DFA56B4002A8C55 /* demo.cpp in Sources */,
+				F166A12F1DFA6017002A8C55 /* demo.cpp in Sources */,
 				F1ABF1CC1DF970E400E09FB8 /* pitch.c in Sources */,
 				F1ABF1CB1DF970E400E09FB8 /* opus_custom_demo.c in Sources */,
 				F1ABF2A71DF9710C00E09FB8 /* control_codec.c in Sources */,
