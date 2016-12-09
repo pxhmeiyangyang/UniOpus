@@ -25,23 +25,23 @@
 
 @implementation libOpus
 
-//-(id)init
-//{
-//    if (self = [super init])
-//    {
+-(id)init
+{
+    if (self = [super init])
+    {
 //        [self opusCreat];
-//        
-//        encodeQue = dispatch_queue_create("cn.unisound.encode", nil);
-//        
-//        audioDataAry = [[NSMutableArray alloc]init];
-//        isStoped = NO;
-//        isCanceled = NO;
-//        finishCallBack = NO;
-//        
-//        encodeNum = 0;
-//    }
-//    return self;
-//}
+        
+        encodeQue = dispatch_queue_create("cn.unisound.encode", nil);
+        
+        audioDataAry = [[NSMutableArray alloc]init];
+        isStoped = NO;
+        isCanceled = NO;
+        finishCallBack = NO;
+        
+        encodeNum = 0;
+    }
+    return self;
+}
 
 //-(void)opusCreat
 //{
