@@ -17,7 +17,7 @@
 		F166A1621DFA9F3C002A8C55 /* testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F166A1611DFA9F3C002A8C55 /* testUITests.m */; };
 		F166A1731DFA9FB6002A8C55 /* test.pcm in Resources */ = {isa = PBXBuildFile; fileRef = F166A1721DFA9FB6002A8C55 /* test.pcm */; };
 		F166A1761DFAA141002A8C55 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F166A1751DFAA141002A8C55 /* libc++.tbd */; };
-		F166A1781DFAA1CE002A8C55 /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F166A1771DFAA1CE002A8C55 /* libOpus.a */; };
+		F166A17A1DFAA640002A8C55 /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F166A1791DFAA640002A8C55 /* libOpus.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,10 +54,10 @@
 		F166A15D1DFA9F3C002A8C55 /* newOpusDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = newOpusDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F166A1611DFA9F3C002A8C55 /* testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = testUITests.m; sourceTree = "<group>"; };
 		F166A1631DFA9F3C002A8C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F166A1711DFA9F97002A8C55 /* libOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = libOpus.h; sourceTree = "<group>"; };
 		F166A1721DFA9FB6002A8C55 /* test.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.pcm; sourceTree = "<group>"; };
 		F166A1751DFAA141002A8C55 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
-		F166A1771DFAA1CE002A8C55 /* libOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOpus.a; sourceTree = "<group>"; };
+		F166A1791DFAA640002A8C55 /* libOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOpus.a; path = newLibOpus/libOpus.a; sourceTree = "<group>"; };
+		F166A17B1DFAA649002A8C55 /* libOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libOpus.h; path = newLibOpus/libOpus/libOpus.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F166A1781DFAA1CE002A8C55 /* libOpus.a in Frameworks */,
+				F166A17A1DFAA640002A8C55 /* libOpus.a in Frameworks */,
 				F166A1761DFAA141002A8C55 /* libc++.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,9 +90,9 @@
 		F166A1301DFA9F3C002A8C55 = {
 			isa = PBXGroup;
 			children = (
-				F166A1771DFAA1CE002A8C55 /* libOpus.a */,
+				F166A17B1DFAA649002A8C55 /* libOpus.h */,
+				F166A1791DFAA640002A8C55 /* libOpus.a */,
 				F166A1721DFA9FB6002A8C55 /* test.pcm */,
-				F166A1711DFA9F97002A8C55 /* libOpus.h */,
 				F166A13B1DFA9F3C002A8C55 /* test */,
 				F166A1551DFA9F3C002A8C55 /* testTests */,
 				F166A1601DFA9F3C002A8C55 /* testUITests */,
@@ -453,6 +453,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/newLibOpus",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunzhisheng.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -469,6 +470,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/newLibOpus",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunzhisheng.test;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -540,6 +542,7 @@
 				F166A1681DFA9F3C002A8C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F166A1691DFA9F3C002A8C55 /* Build configuration list for PBXNativeTarget "newOpusDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -548,6 +551,7 @@
 				F166A16B1DFA9F3C002A8C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F166A16C1DFA9F3C002A8C55 /* Build configuration list for PBXNativeTarget "newOpusDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +560,7 @@
 				F166A16E1DFA9F3C002A8C55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
