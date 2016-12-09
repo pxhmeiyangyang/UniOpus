@@ -90,6 +90,8 @@
     int frame_size = 320;
     NSRange range = NSMakeRange(0, 0);
     
+    NSLog(@"]]]%d",_isEncode);
+    
     Opus* opus = new Opus(Opus::WB_MODE, _isEncode);
     
     while (range.location < pcmData.length)
