@@ -19,7 +19,7 @@
     // Do any additional setup after loading the view, typically from a nib.
     _opus = [[libOpus alloc]init];
     _opus.delegate = self;
-    BOOL isEncode = false;
+    BOOL isEncode = true;
     NSString* type = @"pcm";
     if (isEncode) {
         type = @"pcm";

@@ -146,7 +146,7 @@
 
 -(void)appendAudioData:(NSData *)data isEncode:(BOOL)isEncode
 {
-    NSLog(@"appendAudioData isEncode:%d",isEncode);
+    NSLog(@"appendAudioData%ld isEncode:%d",data.length,isEncode);
  
     _isEncode = isEncode;
     
