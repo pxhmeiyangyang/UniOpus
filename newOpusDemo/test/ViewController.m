@@ -22,7 +22,7 @@
     NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:@"pcm"];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     NSLog(@"%lu",(unsigned long)data.length);
-    [_opus appendAudioData:data];
+    [_opus appendAudioData:data isEncode:true];
 }
 
 

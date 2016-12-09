@@ -36,7 +36,7 @@
  *  按照buffer进行编码
  *  @param data 传入需要编码的音频数据
  */
--(void)appendAudioData:(NSData *)data;
+-(void)appendAudioData:(NSData *)data isEncode:(BOOL)isEncode;
 
 /**
  *  停止编码

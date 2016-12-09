@@ -18,6 +18,7 @@
     BOOL isCanceled;
     BOOL isStoped;
     BOOL finishCallBack;
+    BOOL isEncode;
     NSInteger encodeNum;
     OpusEncoder *enc;
 }
@@ -44,7 +45,7 @@
         isStoped = NO;
         isCanceled = NO;
         finishCallBack = NO;
-        
+        isEncode = true;
         encodeNum = 0;
     }
     return self;
@@ -89,7 +90,7 @@
     int frame_size = 320;
     NSRange range = NSMakeRange(0, 0);
     
-    Opus* opus = new Opus(Opus::WB_MODE, true);
+    Opus* opus = new Opus(Opus::WB_MODE, isEncode);
     
     while (range.location < pcmData.length)
     {
@@ -120,7 +121,12 @@
         char* outData = NULL;
 //        opus_int32 length = 0;
         unsigned int length;
-        int ret = opus->encode(pcm, frame_size * 2, &outData, &length);
+        if (isEncode){
+            int ret = opus->encode(pcm, frame_size * 2, &outData, &length);
+        }else{
+            int ret = opus->decode(pcm, frame_size * 2, &outData, &length);
+        }
+        
         
 //        opus_int32 length = opus_encode(enc, pcm, frame_size, outData + sizeof(short), frame_size * 2);
 //        outData[0] = length & 0xFF;
@@ -136,9 +142,11 @@
     return encodeData;
 }
 
--(void)appendAudioData:(NSData *)data
+-(void)appendAudioData:(NSData *)data isEncode:(BOOL)isEncode
 {
-    NSLog(@"appendAudioData");
+    NSLog(@"appendAudioData isEncode:%d",isEncode);
+ 
+    isEncode = isEncode;
     
     NSData *originalData = [[NSData alloc]initWithData:data];
     [audioDataAry addObject:originalData];
