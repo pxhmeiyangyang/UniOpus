@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		F151BBFA1DF9483A00D5E00F /* libOpus.mm in Sources */ = {isa = PBXBuildFile; fileRef = F151BBF91DF9483A00D5E00F /* libOpus.mm */; };
 		F151BBFB1DF9483A00D5E00F /* libOpus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = F151BBF81DF9483A00D5E00F /* libOpus.h */; };
+		F166A12A1DFA5695002A8C55 /* cache.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A1251DFA5694002A8C55 /* cache.cpp */; };
+		F166A12B1DFA5695002A8C55 /* uni_opus_decoder.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A1281DFA5694002A8C55 /* uni_opus_decoder.cpp */; };
+		F166A12D1DFA56B4002A8C55 /* demo.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F166A12C1DFA56B4002A8C55 /* demo.cpp */; };
 		F1ABF14A1DF970D100E09FB8 /* analysis.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF1391DF970D100E09FB8 /* analysis.c */; };
 		F1ABF14B1DF970D100E09FB8 /* mlp_data.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF13B1DF970D100E09FB8 /* mlp_data.c */; };
 		F1ABF14C1DF970D100E09FB8 /* mlp.c in Sources */ = {isa = PBXBuildFile; fileRef = F1ABF13C1DF970D100E09FB8 /* mlp.c */; };
@@ -161,6 +164,12 @@
 		F151BBF51DF9483A00D5E00F /* libOpus.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libOpus.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		F151BBF81DF9483A00D5E00F /* libOpus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = libOpus.h; sourceTree = "<group>"; };
 		F151BBF91DF9483A00D5E00F /* libOpus.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = libOpus.mm; sourceTree = "<group>"; };
+		F166A1251DFA5694002A8C55 /* cache.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cache.cpp; sourceTree = "<group>"; };
+		F166A1261DFA5694002A8C55 /* cache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cache.h; sourceTree = "<group>"; };
+		F166A1271DFA5694002A8C55 /* Compresser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Compresser.h; sourceTree = "<group>"; };
+		F166A1281DFA5694002A8C55 /* uni_opus_decoder.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = uni_opus_decoder.cpp; sourceTree = "<group>"; };
+		F166A1291DFA5694002A8C55 /* uni_opus_decoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = uni_opus_decoder.h; sourceTree = "<group>"; };
+		F166A12C1DFA56B4002A8C55 /* demo.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = demo.cpp; sourceTree = "<group>"; };
 		F1ABF1391DF970D100E09FB8 /* analysis.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = analysis.c; sourceTree = "<group>"; };
 		F1ABF13A1DF970D100E09FB8 /* analysis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = analysis.h; sourceTree = "<group>"; };
 		F1ABF13B1DF970D100E09FB8 /* mlp_data.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mlp_data.c; sourceTree = "<group>"; };
@@ -384,6 +393,12 @@
 		F151BBF71DF9483A00D5E00F /* libOpus */ = {
 			isa = PBXGroup;
 			children = (
+				F166A12C1DFA56B4002A8C55 /* demo.cpp */,
+				F166A1251DFA5694002A8C55 /* cache.cpp */,
+				F166A1261DFA5694002A8C55 /* cache.h */,
+				F166A1271DFA5694002A8C55 /* Compresser.h */,
+				F166A1281DFA5694002A8C55 /* uni_opus_decoder.cpp */,
+				F166A1291DFA5694002A8C55 /* uni_opus_decoder.h */,
 				F1ABF1DE1DF9710B00E09FB8 /* silk */,
 				F1ABF1571DF970E400E09FB8 /* celt */,
 				F1ABF0FC1DF96FFD00E09FB8 /* src */,
@@ -731,6 +746,7 @@
 				F1ABF2FA1DF9710C00E09FB8 /* LPC_inv_pred_gain.c in Sources */,
 				F1ABF2C11DF9710C00E09FB8 /* LTP_scale_ctrl_FIX.c in Sources */,
 				F1ABF3161DF9710C00E09FB8 /* stereo_find_predictor.c in Sources */,
+				F166A12A1DFA5695002A8C55 /* cache.cpp in Sources */,
 				F1ABF3061DF9710C00E09FB8 /* PLC.c in Sources */,
 				F1ABF2B91DF9710C00E09FB8 /* encode_frame_FIX.c in Sources */,
 				F1ABF1C21DF970E400E09FB8 /* cwrs.c in Sources */,
@@ -778,6 +794,7 @@
 				F1ABF3181DF9710C00E09FB8 /* stereo_MS_to_LR.c in Sources */,
 				F1ABF2F91DF9710C00E09FB8 /* LPC_analysis_filter.c in Sources */,
 				F1ABF2AA1DF9710C00E09FB8 /* dec_API.c in Sources */,
+				F166A12D1DFA56B4002A8C55 /* demo.cpp in Sources */,
 				F1ABF1CC1DF970E400E09FB8 /* pitch.c in Sources */,
 				F1ABF1CB1DF970E400E09FB8 /* opus_custom_demo.c in Sources */,
 				F1ABF2A71DF9710C00E09FB8 /* control_codec.c in Sources */,
@@ -794,6 +811,7 @@
 				F1ABF14E1DF970D100E09FB8 /* opus_decoder.c in Sources */,
 				F1ABF2C21DF9710C00E09FB8 /* noise_shape_analysis_FIX.c in Sources */,
 				F1ABF3041DF9710C00E09FB8 /* NSQ_del_dec.c in Sources */,
+				F166A12B1DFA5695002A8C55 /* uni_opus_decoder.cpp in Sources */,
 				F1ABF1C41DF970E400E09FB8 /* entdec.c in Sources */,
 				F1ABF1BF1DF970E400E09FB8 /* celt_decoder.c in Sources */,
 				F1ABF2FF1DF9710C00E09FB8 /* NLSF_stabilize.c in Sources */,
