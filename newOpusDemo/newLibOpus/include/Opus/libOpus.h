@@ -25,18 +25,18 @@
 //
 //@end
 
-typedef void(^OpusDataDidEncode)(NSData* encodeData);
-typedef void(^OpusDataDidFinished)();
+typedef void(^OpusDataDidFinished) ();
+
+typedef void(^OpusDataDidEncode) (NSData* data);
 
 @interface libOpus : NSObject
 
 
 //@property (nonatomic,assign)id <OpusDelegate>delegate;
-//返回编码的数据
-@property(nonatomic,copy)OpusDataDidEncode opusDataDidEncode;
-//编码完成的返回
-@property(nonatomic,copy)OpusDataDidFinished opusDataDidFinished;
 
+@property (nonatomic,copy)OpusDataDidFinished opusDataDidFinished;
+
+@property (nonatomic,copy)OpusDataDidEncode opusDataDidEncode;
 /**
  *  opus编码函数
  *  按照buffer进行编码
