@@ -22,7 +22,7 @@
     _data = [NSMutableData data];
     _opus = [[libOpus alloc]init];
     _opus.delegate = self;
-    _isEncode = false;
+    _isEncode = true;
     NSString* type = @"pcm";
     if (_isEncode) {
         type = @"pcm";
