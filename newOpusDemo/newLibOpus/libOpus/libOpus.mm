@@ -142,12 +142,6 @@
 //        outData[1] = (length & 0xFF00) >> 8;
 //        NSLog(@"out length %length",length);
 //        NSData *data = [[NSData alloc]init];
-//        if (_isEncode) {
-////            data = [[NSData alloc]initWithBytes:outData length:length + sizeof(short)];
-//            data = [[NSData alloc]initWithBytes:outData length:length];
-//        }else{
-//            data = [[NSData alloc]initWithBytes:outData length:length + sizeof(short)];
-//        }
         NSData *data = [[NSData alloc]initWithBytes:outData length:length];
         NSLog(@"out data %d",data.length);
         [encodeData appendData:data];

@@ -22,15 +22,15 @@
     _data = [NSMutableData data];
     _opus = [[libOpus alloc]init];
     _opus.delegate = self;
-    _isEncode = false;
+    _isEncode = true;
     NSString* type = @"pcm";
     if (_isEncode) {
         type = @"pcm";
     }else{
         type = @"opus";
     }
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:type];
-//    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"cacheTest" ofType:type];
+//    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:type];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"cacheTest" ofType:type];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
     NSLog(@"%lu",(unsigned long)data.length);
     [_opus appendAudioData:data isEncode:_isEncode];
