@@ -19,6 +19,8 @@
 		F166A1761DFAA141002A8C55 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F166A1751DFAA141002A8C55 /* libc++.tbd */; };
 		F166A17A1DFAA640002A8C55 /* libOpus.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F166A1791DFAA640002A8C55 /* libOpus.a */; };
 		F166A17D1DFAB5F2002A8C55 /* test.opus in Resources */ = {isa = PBXBuildFile; fileRef = F166A17C1DFAB5F2002A8C55 /* test.opus */; };
+		F19E95BA1DFE40D000312B38 /* cacheTest.opus in Resources */ = {isa = PBXBuildFile; fileRef = F19E95B81DFE40D000312B38 /* cacheTest.opus */; };
+		F19E95BB1DFE40D000312B38 /* cacheTest.pcm in Resources */ = {isa = PBXBuildFile; fileRef = F19E95B91DFE40D000312B38 /* cacheTest.pcm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		F166A1791DFAA640002A8C55 /* libOpus.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libOpus.a; path = newLibOpus/libOpus.a; sourceTree = "<group>"; };
 		F166A17B1DFAA649002A8C55 /* libOpus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = libOpus.h; path = newLibOpus/libOpus/libOpus.h; sourceTree = "<group>"; };
 		F166A17C1DFAB5F2002A8C55 /* test.opus */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.opus; sourceTree = "<group>"; };
+		F19E95B81DFE40D000312B38 /* cacheTest.opus */ = {isa = PBXFileReference; lastKnownFileType = file; path = cacheTest.opus; sourceTree = "<group>"; };
+		F19E95B91DFE40D000312B38 /* cacheTest.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = cacheTest.pcm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,8 @@
 		F166A1301DFA9F3C002A8C55 = {
 			isa = PBXGroup;
 			children = (
+				F19E95B81DFE40D000312B38 /* cacheTest.opus */,
+				F19E95B91DFE40D000312B38 /* cacheTest.pcm */,
 				F166A17B1DFAA649002A8C55 /* libOpus.h */,
 				F166A17C1DFAB5F2002A8C55 /* test.opus */,
 				F166A1791DFAA640002A8C55 /* libOpus.a */,
@@ -274,8 +280,10 @@
 				F166A14C1DFA9F3C002A8C55 /* LaunchScreen.storyboard in Resources */,
 				F166A1491DFA9F3C002A8C55 /* Assets.xcassets in Resources */,
 				F166A17D1DFAB5F2002A8C55 /* test.opus in Resources */,
+				F19E95BA1DFE40D000312B38 /* cacheTest.opus in Resources */,
 				F166A1731DFA9FB6002A8C55 /* test.pcm in Resources */,
 				F166A1471DFA9F3C002A8C55 /* Main.storyboard in Resources */,
+				F19E95BB1DFE40D000312B38 /* cacheTest.pcm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

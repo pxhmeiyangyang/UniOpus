@@ -109,14 +109,15 @@
         
         [blockData appendData:[[NSData alloc]initWithData:[pcmData subdataWithRange:range]]];
         //文件末端不满一帧的部分用0补齐
-        if (blockData.length < frame_size * 2)
-        {
-            while (blockData.length < frame_size * 2)
-            {
-                short i = 0;
-                [blockData appendBytes:(void *)&i length:sizeof(short)];
-            }
-        }
+//        if (blockData.length < frame_size * 2)
+//        {
+//            while (blockData.length < frame_size * 2)
+//            {
+//                short i = 0;
+//                [blockData appendBytes:(void *)&i length:sizeof(short)];
+//            }
+//        }
+        NSLog(@"in data %d",blockData.length);
 //        opus_int16 *pcm = (opus_int16 *)blockData.bytes;
         char* pcm = (char* )[blockData bytes];
 //        unsigned char outData[(frame_size + 1) * 2];
@@ -124,18 +125,20 @@
 //        opus_int32 length = 0;
         unsigned int length;
         if (_isEncode){
-            int ret = opus->encode(pcm, frame_size * 2, &outData, &length);
+//            int ret = opus->encode(pcm, frame_size * 2, &outData, &length);
+            int ret = opus->encode(pcm, range.length, &outData, &length);
         }else{
-            int ret = opus->decode(pcm, frame_size * 2, &outData, &length);
+//            int ret = opus->decode(pcm, frame_size * 2, &outData, &length);
+            int ret = opus->decode(pcm, range.length, &outData, &length);
         }
         
         
 //        opus_int32 length = opus_encode(enc, pcm, frame_size, outData + sizeof(short), frame_size * 2);
 //        outData[0] = length & 0xFF;
 //        outData[1] = (length & 0xFF00) >> 8;
-    
+        NSLog(@"out length %length",length);
         NSData *data = [[NSData alloc]initWithBytes:outData length:length + sizeof(short)];
-    
+        NSLog(@"out data %d",data.length);
         [encodeData appendData:data];
         
         range.location += range.length;
