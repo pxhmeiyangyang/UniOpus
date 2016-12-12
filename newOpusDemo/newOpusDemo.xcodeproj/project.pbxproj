@@ -21,6 +21,7 @@
 		F166A17D1DFAB5F2002A8C55 /* test.opus in Resources */ = {isa = PBXBuildFile; fileRef = F166A17C1DFAB5F2002A8C55 /* test.opus */; };
 		F19E95C61DFE520A00312B38 /* cacheTest.opus in Resources */ = {isa = PBXBuildFile; fileRef = F19E95C41DFE520A00312B38 /* cacheTest.opus */; };
 		F19E95C71DFE520A00312B38 /* cacheTest.pcm in Resources */ = {isa = PBXBuildFile; fileRef = F19E95C51DFE520A00312B38 /* cacheTest.pcm */; };
+		F1AB8D401DFEAFA9008CBE44 /* 148153716649859.pcm in Resources */ = {isa = PBXBuildFile; fileRef = F1AB8D3F1DFEAFA9008CBE44 /* 148153716649859.pcm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		F166A17C1DFAB5F2002A8C55 /* test.opus */ = {isa = PBXFileReference; lastKnownFileType = file; path = test.opus; sourceTree = "<group>"; };
 		F19E95C41DFE520A00312B38 /* cacheTest.opus */ = {isa = PBXFileReference; lastKnownFileType = file; path = cacheTest.opus; sourceTree = "<group>"; };
 		F19E95C51DFE520A00312B38 /* cacheTest.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = cacheTest.pcm; sourceTree = "<group>"; };
+		F1AB8D3F1DFEAFA9008CBE44 /* 148153716649859.pcm */ = {isa = PBXFileReference; lastKnownFileType = file; path = 148153716649859.pcm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			isa = PBXGroup;
 			children = (
 				F19E95C41DFE520A00312B38 /* cacheTest.opus */,
+				F1AB8D3F1DFEAFA9008CBE44 /* 148153716649859.pcm */,
 				F19E95C51DFE520A00312B38 /* cacheTest.pcm */,
 				F166A17B1DFAA649002A8C55 /* libOpus.h */,
 				F166A17C1DFAB5F2002A8C55 /* test.opus */,
@@ -283,6 +286,7 @@
 				F19E95C61DFE520A00312B38 /* cacheTest.opus in Resources */,
 				F166A1731DFA9FB6002A8C55 /* test.pcm in Resources */,
 				F166A1471DFA9F3C002A8C55 /* Main.storyboard in Resources */,
+				F1AB8D401DFEAFA9008CBE44 /* 148153716649859.pcm in Resources */,
 				F19E95C71DFE520A00312B38 /* cacheTest.pcm in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +465,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PMZEC39K6;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -478,6 +483,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 7PMZEC39K6;
 				INFOPLIST_FILE = test/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",

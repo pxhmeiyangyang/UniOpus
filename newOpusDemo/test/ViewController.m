@@ -49,10 +49,10 @@
     }else{
         type = @"opus";
     }
-    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"test" ofType:type];
+    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"148153716649859" ofType:type];
 //    NSString* filePath = [[NSBundle mainBundle] pathForResource:@"cacheTest" ofType:type];
     NSData* data = [NSData dataWithContentsOfFile:filePath];
-    NSLog(@"%lu",(unsigned long)data.length);
+    NSLog(@"====%lu",(unsigned long)data.length);
     [_opus appendAudioData:data isEncode:_isEncode];
 }
 
