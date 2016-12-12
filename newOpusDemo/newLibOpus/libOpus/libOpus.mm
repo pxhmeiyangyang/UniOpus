@@ -236,14 +236,15 @@
 
 -(void)callBackEncodeData:(NSData *)data
 {
+
+    if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidEncode:)])
+    {
+        [_delegate opusDataDidEncode:data];
+    }
     //如果编码已完成，则直接返回，若还没完成，则在完成时返回
     if (encodeNum == audioDataAry.count)
     {
         [self callBackFinish];
-    }
-    if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidEncode:)])
-    {
-        [_delegate opusDataDidEncode:data];
     }
 }
 
