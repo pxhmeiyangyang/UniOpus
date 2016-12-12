@@ -9,27 +9,33 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol OpusDelegate <NSObject>
+//@protocol OpusDelegate <NSObject>
+//
+///**
+// *  opus编码完成后编码数据回调
+// *
+// *  @param encodeData 编码数据
+// */
+//-(void)opusDataDidEncode:(NSData *)encodeData;
+//
+///**
+// *  编码完成回调
+// */
+//-(void)opusDataDidFinished;
+//
+//@end
 
-/**
- *  opus编码完成后编码数据回调
- *
- *  @param encodeData 编码数据
- */
--(void)opusDataDidEncode:(NSData *)encodeData;
-
-/**
- *  编码完成回调
- */
--(void)opusDataDidFinished;
-
-@end
-
+typedef void(^OpusDataDidEncode)(NSData* encodeData);
+typedef void(^OpusDataDidFinished)();
 
 @interface libOpus : NSObject
 
 
-@property (nonatomic,assign)id <OpusDelegate>delegate;
+//@property (nonatomic,assign)id <OpusDelegate>delegate;
+//返回编码的数据
+@property(nonatomic,copy)OpusDataDidEncode opusDataDidEncode;
+//编码完成的返回
+@property(nonatomic,copy)OpusDataDidFinished opusDataDidFinished;
 
 /**
  *  opus编码函数

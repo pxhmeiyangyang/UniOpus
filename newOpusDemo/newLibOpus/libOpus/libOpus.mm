@@ -235,9 +235,12 @@
     if (!finishCallBack)
     {
         finishCallBack = YES;
-        if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidFinished)])
-        {
-            [_delegate opusDataDidFinished];
+//        if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidFinished)])
+//        {
+//            [_delegate opusDataDidFinished];
+//        }
+        if (_opusDataDidFinished) {
+            self.opusDataDidFinished();
         }
     }
 }
@@ -245,9 +248,12 @@
 -(void)callBackEncodeData:(NSData *)data
 {
 
-    if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidEncode:)])
-    {
-        [_delegate opusDataDidEncode:data];
+//    if (_delegate && [_delegate respondsToSelector:@selector(opusDataDidEncode:)])
+//    {
+//        [_delegate opusDataDidEncode:data];
+//    }
+    if (_opusDataDidEncode) {
+        self.opusDataDidEncode(data);
     }
     //如果编码已完成，则直接返回，若还没完成，则在完成时返回
     if (encodeNum == audioDataAry.count)

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "libOpus.h"
-@interface ViewController : UIViewController<OpusDelegate>
+@interface ViewController : UIViewController
 
 
 @end
