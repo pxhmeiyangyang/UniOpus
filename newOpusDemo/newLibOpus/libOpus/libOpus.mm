@@ -26,13 +26,6 @@
 
 @implementation libOpus
 
-
--(void)opusLog:(NSString*)str{
-#if DEBUG
-    NSLog(@"=====%@=======",str);
-#endif
-}
-
 -(id)init
 {
     if (self = [super init])
@@ -90,8 +83,8 @@
     int frame_size = 320;
     NSRange range = NSMakeRange(0, 0);
     
-    NSLog(@"]]]%d",_isEncode);
-    
+//    NSLog(@"]]]%d",_isEncode);
+    printf("]]]%d\n",_isEncode);
     Opus* opus = new Opus(Opus::WB_MODE, _isEncode);
     
     while (range.location < pcmData.length)
@@ -112,7 +105,6 @@
         if(_isEncode){
             if (blockData.length < frame_size * 2)
             {
-                NSLog(@"append length %d",640 - blockData.length);
                 while (blockData.length < frame_size * 2)
                 {
                     short i = 0;
@@ -121,7 +113,8 @@
             }
         }
         
-        NSLog(@"in data %d",blockData.length);
+//        NSLog(@"in data %d",blockData.length);
+        printf("in data %d\n",blockData.length);
 //        opus_int16 *pcm = (opus_int16 *)blockData.bytes;
         char* pcm = (char* )[blockData bytes];
 //        unsigned char outData[(frame_size + 1) * 2];
@@ -143,18 +136,19 @@
 //        NSLog(@"out length %length",length);
 //        NSData *data = [[NSData alloc]init];
         NSData *data = [[NSData alloc]initWithBytes:outData length:length];
-        NSLog(@"out data %d",data.length);
+//        NSLog(@"out data %d",data.length);
+        printf("out data %d\n",data.length);
         [encodeData appendData:data];
         
         range.location += range.length;
     }
-    NSLog(@"%d",encodeData.length);
     return encodeData;
 }
 
 -(void)appendAudioData:(NSData *)data isEncode:(BOOL)isEncode
 {
-    NSLog(@"appendAudioData%ld isEncode:%d",data.length,isEncode);
+//    NSLog(@"appendAudioData%ld isEncode:%d",data.length,isEncode);
+    printf("appendAudioData%ld isEncode:%d\n",data.length,isEncode);
  
     _isEncode = isEncode;
     
@@ -179,8 +173,8 @@
             //将编码后的数据在主线程回调
             dispatch_async(dispatch_get_main_queue(), ^{
                 
-                NSLog(@"UniOpus -> encode : %ld |encodeNum : %ld| isStop : %d | isCanceled : %d",(long)audioDataAry.count, (long)encodeNum, isStoped, isCanceled);
-                
+//                NSLog(@"UniOpus -> encode : %ld |encodeNum : %ld| isStop : %d | isCanceled : %d",(long)audioDataAry.count, (long)encodeNum, isStoped, isCanceled);
+                printf("UniOpus -> encode : %ld |encodeNum : %ld| isStop : %d | isCanceled : %d\n",(long)audioDataAry.count, (long)encodeNum, isStoped, isCanceled);
                 if (isCanceled)
                 {
                     return ;
@@ -213,7 +207,8 @@
 
 -(void)stopEncode
 {
-    NSLog(@"UniOpus -> stopEncode");
+//    NSLog(@"UniOpus -> stopEncode");
+    printf("UniOpus -> stopEncode\n");
     isStoped = YES;
     
     //如果编码已完成，则直接返回，若还没完成，则在完成时返回
@@ -225,7 +220,8 @@
 
 -(void)cancelEncode
 {
-    NSLog(@"UniOpus -> cancelEncode");
+//    NSLog(@"UniOpus -> cancelEncode");
+    printf("UniOpus -> cancelEncode\n");
     
     isCanceled = YES;
 }
@@ -264,7 +260,8 @@
 
 -(void)dealloc
 {
-    NSLog(@"UniOpus -> dealloc");
+//    NSLog(@"UniOpus -> dealloc");
+    printf("UniOpus -> dealloc\n");
     
     [audioDataAry removeAllObjects];
     audioDataAry = nil;
